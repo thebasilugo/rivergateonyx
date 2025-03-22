@@ -3,9 +3,533 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Rivergate Onyx</title>
+		<title>Rivergate Onyx Investments Ltd</title>
+		<meta
+			name="description"
+			content="We use our network, professionals, systems and materials to create and build sustainable wealth for our stakeholders."
+		/>
+		<!-- Tailwind CSS -->
+		<script src="https://cdn.tailwindcss.com"></script>
+		<!-- Custom Tailwind Config -->
+		<script>
+			tailwind.config = {
+				darkMode: "class",
+				theme: {
+					extend: {
+						colors: {
+							primary: {
+								DEFAULT: "#0f766e",
+								50: "#f0fdfa",
+								100: "#ccfbf1",
+								200: "#99f6e4",
+								300: "#5eead4",
+								400: "#2dd4bf",
+								500: "#14b8a6",
+								600: "#0d9488",
+								700: "#0f766e",
+								800: "#115e59",
+								900: "#134e4a",
+								950: "#042f2e",
+							},
+						},
+						fontFamily: {
+							sans: ["Inter", "sans-serif"],
+						},
+					},
+				},
+			};
+		</script>
+		<!-- Inter Font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Lucide Icons -->
+		<script src="https://unpkg.com/lucide@latest"></script>
+		<!-- Custom Styles -->
+		<style>
+			body {
+				font-family: "Inter", sans-serif;
+			}
+			.hero-section {
+				background-color: #f8f9fa;
+				background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f8f9fa"/><path d="M0 0L100 100M100 0L0 100" stroke="%23f0f0f0" stroke-width="1"/></svg>');
+				background-size: 20px 20px;
+			}
+		</style>
 	</head>
-	<body>
-		rivergate onyx
+	<body class="flex flex-col min-h-screen bg-white">
+		<!-- Header -->
+		<header
+			class="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60"
+		>
+			<div
+				class="container mx-auto px-4 flex h-16 items-center justify-between"
+			>
+				<div class="flex items-center gap-2">
+					<a href="index.html" class="flex items-center space-x-2">
+						<i data-lucide="building" class="h-6 w-6"></i>
+						<span class="hidden font-bold sm:inline-block"
+							>Rivergate Onyx Investments Ltd</span
+						>
+					</a>
+				</div>
+				<nav class="hidden md:flex items-center gap-6 text-sm">
+					<a
+						href="index.html"
+						class="transition-colors hover:text-gray-600 text-gray-900 font-medium"
+					>
+						Home
+					</a>
+					<a
+						href="#"
+						class="transition-colors hover:text-gray-600 text-gray-500"
+					>
+						About
+					</a>
+					<a
+						href="#"
+						class="transition-colors hover:text-gray-600 text-gray-500"
+					>
+						Services
+					</a>
+					<a
+						href="#"
+						class="transition-colors hover:text-gray-600 text-gray-500"
+					>
+						Team
+					</a>
+					<a
+						href="#"
+						class="transition-colors hover:text-gray-600 text-gray-500"
+					>
+						Contact
+					</a>
+				</nav>
+				<div class="flex items-center gap-2">
+					<a
+						href="#"
+						class="hidden md:inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-primary-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary"
+					>
+						Get Started
+					</a>
+					<button
+						id="mobile-menu-button"
+						class="inline-flex items-center justify-center rounded-md border border-gray-200 p-2 text-gray-500 md:hidden"
+					>
+						<i data-lucide="menu" class="h-5 w-5"></i>
+						<span class="sr-only">Toggle Menu</span>
+					</button>
+				</div>
+			</div>
+			<!-- Mobile Menu -->
+			<div id="mobile-menu" class="hidden md:hidden">
+				<div class="space-y-1 px-4 py-3 border-t">
+					<a
+						href="index.html"
+						class="block py-2 text-base font-medium text-gray-900"
+						>Home</a
+					>
+					<a href="#" class="block py-2 text-base text-gray-500">About</a>
+					<a href="#" class="block py-2 text-base text-gray-500">Services</a>
+					<a href="#" class="block py-2 text-base text-gray-500">Team</a>
+					<a href="#" class="block py-2 text-base text-gray-500">Contact</a>
+					<a
+						href="#"
+						class="inline-flex w-full items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-primary-600 mt-3"
+					>
+						Get Started
+					</a>
+				</div>
+			</div>
+		</header>
+
+		<main class="flex-1">
+			<!-- Hero Section -->
+			<section class="w-full py-12 md:py-24 lg:py-32 xl:py-48 hero-section">
+				<div class="container mx-auto px-4 md:px-6">
+					<div class="flex flex-col items-center space-y-4 text-center">
+						<div class="space-y-2">
+							<h1
+								class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none"
+							>
+								Rivergate Onyx Investments Ltd
+							</h1>
+							<p class="mx-auto max-w-[700px] text-gray-500 md:text-xl">
+								Building sustainable generational wealth for our clients through
+								boosting operational efficiency.
+							</p>
+						</div>
+						<div class="space-x-4">
+							<a
+								href="#"
+								class="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-primary-600"
+							>
+								Our Services
+								<i data-lucide="chevron-right" class="ml-1 h-4 w-4"></i>
+							</a>
+							<a
+								href="#"
+								class="inline-flex items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 shadow-sm transition-colors hover:bg-gray-100"
+							>
+								Contact Us
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- About Section -->
+			<section class="w-full py-12 md:py-24 lg:py-32 bg-white">
+				<div class="container mx-auto px-4 md:px-6">
+					<div class="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
+						<div>
+							<h2
+								class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
+							>
+								Boosting Operational Efficiency
+							</h2>
+							<p class="max-w-[600px] text-gray-500 md:text-xl mt-4">
+								At Rivergate Onyx Investments Ltd, we're committed to becoming
+								the wise master builder of sustainable generational wealth for
+								our clients; through boosting operational efficiency, thereby
+								enhancing clients' liquidity and profitability.
+							</p>
+							<div class="mt-8 flex flex-col sm:flex-row gap-4">
+								<a
+									href="#"
+									class="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-primary-600"
+								>
+									Learn More About Us
+									<i data-lucide="chevron-right" class="ml-2 h-4 w-4"></i>
+								</a>
+								<a
+									href="#"
+									class="inline-flex items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 shadow-sm transition-colors hover:bg-gray-100"
+								>
+									Explore Our Services
+								</a>
+							</div>
+						</div>
+						<div class="relative h-[400px] w-full overflow-hidden rounded-xl">
+							<img
+								src="https://placehold.co/600x400/f8f9fa/a3a3a3?text=Professional+Business+Meeting"
+								alt="Professional business meeting"
+								class="absolute inset-0 h-full w-full object-cover"
+							/>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Services Section -->
+			<section class="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
+				<div class="container mx-auto px-4 md:px-6">
+					<div
+						class="flex flex-col items-center justify-center space-y-4 text-center"
+					>
+						<div class="space-y-2">
+							<div
+								class="inline-block rounded-lg bg-primary-100 px-3 py-1 text-sm font-medium text-primary"
+							>
+								Our Services
+							</div>
+							<h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">
+								Comprehensive Solutions for Growth
+							</h2>
+							<p class="max-w-[900px] text-gray-500 md:text-xl">
+								We provide professional services to boost operational
+								efficiency, enhance liquidity, and improve profitability for our
+								clients.
+							</p>
+						</div>
+					</div>
+					<div
+						class="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3"
+					>
+						<div
+							class="flex flex-col justify-center space-y-4 rounded-lg border bg-white p-6"
+						>
+							<div
+								class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary-100"
+							>
+								<i data-lucide="line-chart" class="h-6 w-6 text-primary"></i>
+							</div>
+							<h3 class="text-xl font-bold">Consulting Services</h3>
+							<p class="text-gray-500">
+								Financial and Management consulting services to transform
+								businesses and boost productivity.
+							</p>
+							<a
+								href="#"
+								class="mt-auto inline-flex w-full items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 shadow-sm transition-colors hover:bg-gray-100"
+							>
+								Learn More
+							</a>
+						</div>
+						<div
+							class="flex flex-col justify-center space-y-4 rounded-lg border bg-white p-6"
+						>
+							<div
+								class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary-100"
+							>
+								<i data-lucide="building" class="h-6 w-6 text-primary"></i>
+							</div>
+							<h3 class="text-xl font-bold">Real Estate Marketing</h3>
+							<p class="text-gray-500">
+								Expert advice and services for buying, selling, and investing in
+								real estate properties.
+							</p>
+							<a
+								href="#"
+								class="mt-auto inline-flex w-full items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 shadow-sm transition-colors hover:bg-gray-100"
+							>
+								Learn More
+							</a>
+						</div>
+						<div
+							class="flex flex-col justify-center space-y-4 rounded-lg border bg-white p-6"
+						>
+							<div
+								class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary-100"
+							>
+								<i data-lucide="landmark" class="h-6 w-6 text-primary"></i>
+							</div>
+							<h3 class="text-xl font-bold">Real Estate Management</h3>
+							<p class="text-gray-500">
+								Professional services to ensure your real estate properties
+								maintain high standards.
+							</p>
+							<a
+								href="#"
+								class="mt-auto inline-flex w-full items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 shadow-sm transition-colors hover:bg-gray-100"
+							>
+								Learn More
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Team Preview Section -->
+			<section class="w-full py-12 md:py-24 lg:py-32 bg-white">
+				<div class="container mx-auto px-4 md:px-6">
+					<div
+						class="flex flex-col items-center justify-center space-y-4 text-center"
+					>
+						<div class="space-y-2">
+							<div
+								class="inline-block rounded-lg bg-primary-100 px-3 py-1 text-sm font-medium text-primary"
+							>
+								Our Team
+							</div>
+							<h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">
+								Meet Our Leadership
+							</h2>
+							<p class="max-w-[900px] text-gray-500 md:text-xl">
+								Our board of directors comprises experienced professionals with
+								expertise in various fields.
+							</p>
+						</div>
+					</div>
+					<div
+						class="mx-auto grid max-w-5xl grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 py-12"
+					>
+						<div class="flex flex-col items-center space-y-4">
+							<div class="relative h-40 w-40 overflow-hidden rounded-full">
+								<img
+									src="https://placehold.co/160x160/f8f9fa/a3a3a3?text=Dr.+Nweke"
+									alt="Dr. Ifeanyi Gordian Nweke"
+									class="h-full w-full object-cover"
+								/>
+							</div>
+							<div class="space-y-2 text-center">
+								<h3 class="text-xl font-bold">Dr. Ifeanyi Gordian Nweke</h3>
+								<p class="text-sm text-gray-500">Chairman</p>
+							</div>
+						</div>
+						<div class="flex flex-col items-center space-y-4">
+							<div class="relative h-40 w-40 overflow-hidden rounded-full">
+								<img
+									src="https://placehold.co/160x160/f8f9fa/a3a3a3?text=C.+Okonta"
+									alt="Chiedu Samuel Okonta"
+									class="h-full w-full object-cover"
+								/>
+							</div>
+							<div class="space-y-2 text-center">
+								<h3 class="text-xl font-bold">Chiedu Samuel Okonta</h3>
+								<p class="text-sm text-gray-500">Managing Director/CEO</p>
+							</div>
+						</div>
+						<div class="flex flex-col items-center space-y-4">
+							<div class="relative h-40 w-40 overflow-hidden rounded-full">
+								<img
+									src="https://placehold.co/160x160/f8f9fa/a3a3a3?text=M.+Onojake"
+									alt="Mac Onojake & Co"
+									class="h-full w-full object-cover"
+								/>
+							</div>
+							<div class="space-y-2 text-center">
+								<h3 class="text-xl font-bold">Mac Onojake & Co</h3>
+								<p class="text-sm text-gray-500">Lead Partner</p>
+							</div>
+						</div>
+					</div>
+					<div class="flex justify-center">
+						<a
+							href="#"
+							class="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-primary-600"
+						>
+							View All Team Members
+						</a>
+					</div>
+				</div>
+			</section>
+
+			<!-- Contact CTA Section -->
+			<section class="w-full py-12 md:py-24 lg:py-32 bg-primary text-white">
+				<div class="container mx-auto px-4 md:px-6">
+					<div
+						class="flex flex-col items-center justify-center space-y-4 text-center"
+					>
+						<div class="space-y-2">
+							<h2
+								class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
+							>
+								Ready to Build Sustainable Wealth?
+							</h2>
+							<p class="mx-auto max-w-[700px] text-white/80 md:text-xl">
+								Contact our team today to learn more about our services and how
+								we can help you achieve your financial goals.
+							</p>
+						</div>
+						<div class="space-x-4">
+							<a
+								href="#"
+								class="inline-flex items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium text-primary shadow transition-colors hover:bg-gray-100"
+							>
+								Contact Us
+							</a>
+							<a
+								href="#"
+								class="inline-flex items-center justify-center rounded-md border border-white bg-transparent px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-white/10"
+							>
+								Explore Services
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<!-- Footer -->
+		<footer class="w-full border-t bg-white py-8 md:py-12">
+			<div
+				class="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between gap-8"
+			>
+				<div class="flex flex-col gap-4 md:w-1/3">
+					<div class="flex items-center gap-2">
+						<i data-lucide="building" class="h-6 w-6"></i>
+						<span class="font-bold">Rivergate Onyx Investments Ltd</span>
+					</div>
+					<p class="text-sm text-gray-500">
+						Building sustainable generational wealth through operational
+						excellence.
+					</p>
+					<div class="flex items-center gap-2 text-sm text-gray-500">
+						<i data-lucide="mail" class="h-4 w-4"></i>
+						<a href="mailto:rivergateonyxltd@gmail.com" class="hover:underline">
+							rivergateonyxltd@gmail.com
+						</a>
+					</div>
+					<div class="flex items-center gap-2 text-sm text-gray-500">
+						<i data-lucide="phone" class="h-4 w-4"></i>
+						<a href="tel:+2349079103248" class="hover:underline">
+							+234 907 910 3248
+						</a>
+						<span>/</span>
+						<a href="tel:+2348139993322" class="hover:underline">
+							+234 813 999 3322
+						</a>
+					</div>
+				</div>
+				<div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+					<div class="flex flex-col gap-2">
+						<h3 class="font-semibold text-sm">Pages</h3>
+						<a href="index.html" class="text-sm text-gray-500 hover:underline">
+							Home
+						</a>
+						<a href="#" class="text-sm text-gray-500 hover:underline">
+							About
+						</a>
+						<a href="#" class="text-sm text-gray-500 hover:underline">
+							Services
+						</a>
+						<a href="#" class="text-sm text-gray-500 hover:underline"> Team </a>
+						<a href="#" class="text-sm text-gray-500 hover:underline">
+							Contact
+						</a>
+					</div>
+					<div class="flex flex-col gap-2">
+						<h3 class="font-semibold text-sm">Services</h3>
+						<a href="#" class="text-sm text-gray-500 hover:underline">
+							Consulting Services
+						</a>
+						<a href="#" class="text-sm text-gray-500 hover:underline">
+							Real Estate Marketing
+						</a>
+						<a href="#" class="text-sm text-gray-500 hover:underline">
+							Real Estate Management
+						</a>
+					</div>
+					<div class="flex flex-col gap-2 col-span-2 md:col-span-1">
+						<h3 class="font-semibold text-sm">Connect</h3>
+						<a
+							href="https://www.chiedurivergate.com"
+							target="_blank"
+							class="text-sm text-gray-500 hover:underline"
+						>
+							www.chiedurivergate.com
+						</a>
+					</div>
+				</div>
+			</div>
+			<div
+				class="container mx-auto px-4 md:px-6 mt-8 flex flex-col md:flex-row justify-between items-center gap-4 border-t pt-8"
+			>
+				<p class="text-xs text-gray-500 text-center md:text-left">
+					&copy; <span id="current-year"></span> Rivergate Onyx Investments Ltd.
+					All rights reserved.
+				</p>
+				<div class="flex gap-4">
+					<a href="#" class="text-xs text-gray-500 hover:underline">
+						Privacy Policy
+					</a>
+					<a href="#" class="text-xs text-gray-500 hover:underline">
+						Terms of Service
+					</a>
+				</div>
+			</div>
+		</footer>
+
+		<!-- JavaScript -->
+		<script>
+			// Initialize Lucide icons
+			lucide.createIcons();
+
+			// Mobile menu toggle
+			const mobileMenuButton = document.getElementById("mobile-menu-button");
+			const mobileMenu = document.getElementById("mobile-menu");
+
+			mobileMenuButton.addEventListener("click", () => {
+				mobileMenu.classList.toggle("hidden");
+			});
+
+			// Set current year in footer
+			document.getElementById("current-year").textContent =
+				new Date().getFullYear();
+		</script>
 	</body>
 </html>
