@@ -8,6 +8,8 @@
 			name="description"
 			content="We enhance clients' operational efficiency, thereby leading to enhanced productivity, liquidity and profitability through our professional services."
 		/>
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" href="assets/images/favicon.png" />
 		<!-- Tailwind CSS -->
 		<script src="https://cdn.tailwindcss.com"></script>
 		<!-- Custom Tailwind Config -->
@@ -31,9 +33,37 @@
 								900: "#134e4a",
 								950: "#042f2e",
 							},
+							secondary: {
+								DEFAULT: "#475569",
+								50: "#f8fafc",
+								100: "#f1f5f9",
+								200: "#e2e8f0",
+								300: "#cbd5e1",
+								400: "#94a3b8",
+								500: "#64748b",
+								600: "#475569",
+								700: "#334155",
+								800: "#1e293b",
+								900: "#0f172a",
+								950: "#020617",
+							},
 						},
 						fontFamily: {
 							sans: ["Inter", "sans-serif"],
+						},
+						animation: {
+							"fade-in": "fadeIn 0.5s ease-in-out",
+							"slide-up": "slideUp 0.5s ease-in-out",
+						},
+						keyframes: {
+							fadeIn: {
+								"0%": { opacity: "0" },
+								"100%": { opacity: "1" },
+							},
+							slideUp: {
+								"0%": { transform: "translateY(20px)", opacity: "0" },
+								"100%": { transform: "translateY(0)", opacity: "1" },
+							},
 						},
 					},
 				},
@@ -48,76 +78,66 @@
 		/>
 		<!-- Lucide Icons -->
 		<script src="https://unpkg.com/lucide@latest"></script>
-		<!-- Custom Styles -->
-		<style>
-			body {
-				font-family: "Inter", sans-serif;
-			}
-			.hero-section {
-				background-color: #f8f9fa;
-				background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f8f9fa"/><path d="M0 0L100 100M100 0L0 100" stroke="%23f0f0f0" stroke-width="1"/></svg>');
-				background-size: 20px 20px;
-			}
-		</style>
+		<!-- AOS Animation Library -->
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="style.css" />
 	</head>
-	<body class="flex flex-col min-h-screen bg-white">
-		<!-- Header -->
-		<header
-			class="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60"
+	<body
+		class="flex flex-col min-h-screen bg-white dark:bg-gray-900 dark:text-white transition-colors duration-300"
+	>
+		<!-- Preloader -->
+		<div
+			id="preloader"
+			class="fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-gray-900"
 		>
 			<div
-				class="container mx-auto px-4 flex h-16 items-center justify-between"
-			>
+				class="animate-spin rounded-full h-16 w-16 border-t-4 border-primary border-solid"
+			></div>
+		</div>
+
+		<!-- Scroll to Top Button -->
+		<button
+			id="scrollToTop"
+			class="scroll-to-top bg-primary hover:bg-primary-600 text-white p-3 rounded-full shadow-lg"
+		>
+			<i data-lucide="chevron-up" class="h-6 w-6"></i>
+		</button>
+
+		<!-- Header -->
+		<header
+			class="sticky top-0 z-40 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:bg-gray-900/95 dark:border-gray-800 transition-colors duration-300"
+		>
+			<div class="container mx-auto flex h-16 items-center justify-between">
 				<div class="flex items-center gap-2">
 					<a href="index.html" class="flex items-center space-x-2">
-						<i data-lucide="building" class="h-6 w-6"></i>
+						<i data-lucide="building" class="h-6 w-6 text-primary"></i>
 						<span class="hidden font-bold sm:inline-block"
 							>RIVERGATE ONYX INVESTMENT [ROI] LTD</span
 						>
 					</a>
 				</div>
 				<nav class="hidden md:flex items-center gap-6 text-sm">
-					<a
-						href="index.html"
-						class="transition-colors hover:text-gray-600 text-gray-900 font-medium"
-					>
-						Home
-					</a>
-					<a
-						href="#"
-						class="transition-colors hover:text-gray-600 text-gray-500"
-					>
-						About
-					</a>
-					<a
-						href="#"
-						class="transition-colors hover:text-gray-600 text-gray-500"
-					>
-						Services
-					</a>
-					<a
-						href="#"
-						class="transition-colors hover:text-gray-600 text-gray-500"
-					>
-						Team
-					</a>
-					<a
-						href="#"
-						class="transition-colors hover:text-gray-600 text-gray-500"
-					>
-						Contact
-					</a>
+					<!-- Navigation items will be populated by JavaScript -->
 				</nav>
 				<div class="flex items-center gap-2">
+					<button
+						id="darkModeToggle"
+						class="p-2 rounded-full text-gray-500 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+					>
+						<i data-lucide="sun" class="h-5 w-5 dark:hidden"></i>
+						<i data-lucide="moon" class="h-5 w-5 hidden dark:block"></i>
+					</button>
 					<a
-						href="#"
+						href="contact.html"
 						class="hidden md:inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-primary-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary"
 					>
 						Get Started
 					</a>
 					<button
 						id="mobile-menu-button"
-						class="inline-flex items-center justify-center rounded-md border border-gray-200 p-2 text-gray-500 md:hidden"
+						class="inline-flex items-center justify-center rounded-md border border-gray-200 dark:border-gray-700 p-2 text-gray-500 dark:text-gray-300 md:hidden"
 					>
 						<i data-lucide="menu" class="h-5 w-5"></i>
 						<span class="sr-only">Toggle Menu</span>
@@ -126,53 +146,45 @@
 			</div>
 			<!-- Mobile Menu -->
 			<div id="mobile-menu" class="hidden md:hidden">
-				<div class="space-y-1 px-4 py-3 border-t">
-					<a
-						href="index.html"
-						class="block py-2 text-base font-medium text-gray-900"
-						>Home</a
-					>
-					<a href="#" class="block py-2 text-base text-gray-500">About</a>
-					<a href="#" class="block py-2 text-base text-gray-500">Services</a>
-					<a href="#" class="block py-2 text-base text-gray-500">Team</a>
-					<a href="#" class="block py-2 text-base text-gray-500">Contact</a>
-					<a
-						href="#"
-						class="inline-flex w-full items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-primary-600 mt-3"
-					>
-						Get Started
-					</a>
+				<div class="space-y-1 px-4 py-3 border-t dark:border-gray-800">
+					<!-- Mobile navigation items will be populated by JavaScript -->
 				</div>
 			</div>
 		</header>
 
 		<main class="flex-1">
 			<!-- Hero Section -->
-			<section class="w-full py-12 md:py-24 lg:py-32 xl:py-48 hero-section">
+			<section class="w-full py-12 md:py-24 lg:py-32 xl:py-48">
 				<div class="container mx-auto px-4 md:px-6">
-					<div class="flex flex-col items-center space-y-4 text-center">
+					<div
+						class="flex flex-col items-center space-y-4 text-center"
+						data-aos="fade-up"
+						data-aos-duration="1000"
+					>
 						<div class="space-y-2">
 							<h1
 								class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none"
 							>
 								RIVERGATE ONYX INVESTMENT [ROI] LTD
 							</h1>
-							<p class="mx-auto max-w-[700px] text-gray-500 md:text-xl">
+							<p
+								class="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-300"
+							>
 								Enhancing clients' operational efficiency, thereby leading to
 								enhanced productivity, liquidity and profitability.
 							</p>
 						</div>
 						<div class="space-x-4">
 							<a
-								href="#"
+								href="services.html"
 								class="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-primary-600"
 							>
 								Our Services
 								<i data-lucide="chevron-right" class="ml-1 h-4 w-4"></i>
 							</a>
 							<a
-								href="#"
-								class="inline-flex items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 shadow-sm transition-colors hover:bg-gray-100"
+								href="contact.html"
+								class="inline-flex items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-800 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700"
 							>
 								Contact Us
 							</a>
@@ -181,17 +193,21 @@
 				</div>
 			</section>
 
-			<!-- About Section -->
-			<section id="about" class="w-full py-12 md:py-24 lg:py-32 bg-white">
+			<section
+				id="about"
+				class="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-gray-900 transition-colors duration-300"
+			>
 				<div class="container mx-auto px-4 md:px-6">
 					<div class="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
-						<div>
+						<div data-aos="fade-up" data-aos-duration="1000">
 							<h2
-								class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
+								class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl dark:text-white"
 							>
 								Building and Sustaining Operational Efficiency
 							</h2>
-							<p class="max-w-[600px] text-gray-500 md:text-xl mt-4">
+							<p
+								class="max-w-[600px] text-gray-500 dark:text-gray-300 md:text-xl mt-4"
+							>
 								At RIVERGATE ONYX INVESTMENT [ROI] LTD, we're committed to
 								becoming the wise master builder of sustainable generational
 								wealth for our clients through comprehensive review of the
@@ -202,21 +218,26 @@
 							</p>
 							<div class="mt-8 flex flex-col sm:flex-row gap-4">
 								<a
-									href="#"
+									href="about.html"
 									class="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-primary-600"
 								>
 									Learn More About Us
 									<i data-lucide="chevron-right" class="ml-2 h-4 w-4"></i>
 								</a>
 								<a
-									href="#"
-									class="inline-flex items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 shadow-sm transition-colors hover:bg-gray-100"
+									href="services.html"
+									class="inline-flex items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-800 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700"
 								>
 									Explore Our Services
 								</a>
 							</div>
 						</div>
-						<div class="relative h-[400px] w-full overflow-hidden rounded-xl">
+						<div
+							class="relative h-[400px] w-full overflow-hidden rounded-xl"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+							data-aos-delay="200"
+						>
 							<img
 								src="https://placehold.co/600x400/f8f9fa/a3a3a3?text=Professional+Business+Meeting"
 								alt="Professional business meeting"
@@ -227,115 +248,495 @@
 				</div>
 			</section>
 
-			<!-- Services Section -->
-			<section id="services" class="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
+			<section
+				id="services"
+				class="w-full py-12 md:py-24 lg:py-32 bg-gray-50 dark:bg-gray-800 transition-colors duration-300"
+			>
 				<div class="container mx-auto px-4 md:px-6">
 					<div
 						class="flex flex-col items-center justify-center space-y-4 text-center"
+						data-aos="fade-up"
+						data-aos-duration="1000"
 					>
 						<div class="space-y-2">
 							<div
-								class="inline-block rounded-lg bg-primary-100 px-3 py-1 text-sm font-medium text-primary"
+								class="inline-block rounded-lg bg-primary-100 dark:bg-primary-900/30 px-3 py-1 text-sm font-medium text-primary dark:text-primary-300"
 							>
 								Our Services
 							</div>
-							<h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">
+							<h2
+								class="text-3xl font-bold tracking-tighter sm:text-5xl dark:text-white"
+							>
 								Comprehensive Solutions for Growth
 							</h2>
-							<p class="max-w-[900px] text-gray-500 md:text-xl">
+							<p
+								class="max-w-[900px] text-gray-500 dark:text-gray-300 md:text-xl"
+							>
 								We provide professional services to boost operational
 								efficiency, enhance liquidity, and improve profitability for our
 								clients.
 							</p>
 						</div>
 					</div>
+
 					<div
 						class="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3"
 					>
 						<div
-							class="flex flex-col justify-center space-y-4 rounded-lg border bg-white p-6"
+							class="service-card flex flex-col justify-center space-y-4 rounded-lg border dark:border-gray-700 bg-white dark:bg-gray-800 p-6"
+							data-aos="fade-up"
+							data-aos-duration="1000"
 						>
 							<div
-								class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary-100"
+								class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900/30"
 							>
-								<i data-lucide="line-chart" class="h-6 w-6 text-primary"></i>
+								<i
+									data-lucide="line-chart"
+									class="h-6 w-6 text-primary dark:text-primary-300"
+								></i>
 							</div>
-							<h3 class="text-xl font-bold">Consulting Services</h3>
-							<p class="text-gray-500">
+							<h3 class="text-xl font-bold dark:text-white">
+								Consulting Services
+							</h3>
+							<p class="text-gray-500 dark:text-gray-300">
 								Financial and Management consulting services to transform
 								businesses and boost productivity, leading to enhanced
 								productivity, liquidity, and profitability.
 							</p>
 							<a
-								href="#"
-								class="mt-auto inline-flex w-full items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 shadow-sm transition-colors hover:bg-gray-100"
+								href="#oil-gas-consulting"
+								class="mt-auto inline-flex w-full items-center justify-center rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-4 py-2 text-sm font-medium text-gray-900 dark:text-white shadow-sm transition-colors hover:bg-gray-100 dark:hover:bg-gray-700"
 							>
 								Learn More
 							</a>
 						</div>
 						<div
-							class="flex flex-col justify-center space-y-4 rounded-lg border bg-white p-6"
+							class="service-card flex flex-col justify-center space-y-4 rounded-lg border dark:border-gray-700 bg-white dark:bg-gray-800 p-6"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+							data-aos-delay="100"
 						>
 							<div
-								class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary-100"
+								class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900/30"
 							>
-								<i data-lucide="building" class="h-6 w-6 text-primary"></i>
+								<i
+									data-lucide="building"
+									class="h-6 w-6 text-primary dark:text-primary-300"
+								></i>
 							</div>
-							<h3 class="text-xl font-bold">Real Estate Marketing</h3>
-							<p class="text-gray-500">
+							<h3 class="text-xl font-bold dark:text-white">
+								Real Estate Marketing
+							</h3>
+							<p class="text-gray-500 dark:text-gray-300">
 								We use our varied experience, skills, and expertise built on the
 								foundation of proven professional integrity to save clients from
 								waste, losses, and fraud associated with real estate
 								investments.
 							</p>
 							<a
-								href="#"
-								class="mt-auto inline-flex w-full items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 shadow-sm transition-colors hover:bg-gray-100"
+								href="real-estate-marketing.html"
+								class="mt-auto inline-flex w-full items-center justify-center rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-4 py-2 text-sm font-medium text-gray-900 dark:text-white shadow-sm transition-colors hover:bg-gray-100 dark:hover:bg-gray-700"
 							>
 								Learn More
 							</a>
 						</div>
 						<div
-							class="flex flex-col justify-center space-y-4 rounded-lg border bg-white p-6"
+							class="service-card flex flex-col justify-center space-y-4 rounded-lg border dark:border-gray-700 bg-white dark:bg-gray-800 p-6"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+							data-aos-delay="200"
 						>
 							<div
-								class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary-100"
+								class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900/30"
 							>
-								<i data-lucide="landmark" class="h-6 w-6 text-primary"></i>
+								<i
+									data-lucide="landmark"
+									class="h-6 w-6 text-primary dark:text-primary-300"
+								></i>
 							</div>
-							<h3 class="text-xl font-bold">Real Estate Management</h3>
-							<p class="text-gray-500">
+							<h3 class="text-xl font-bold dark:text-white">
+								Real Estate Management
+							</h3>
+							<p class="text-gray-500 dark:text-gray-300">
 								Professional services to ensure your real estate properties
 								maintain high standards, enhancing operational efficiency and
 								value.
 							</p>
 							<a
-								href="#"
-								class="mt-auto inline-flex w-full items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 shadow-sm transition-colors hover:bg-gray-100"
+								href="real-estate-management.html"
+								class="mt-auto inline-flex w-full items-center justify-center rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-4 py-2 text-sm font-medium text-gray-900 dark:text-white shadow-sm transition-colors hover:bg-gray-100 dark:hover:bg-gray-700"
 							>
 								Learn More
 							</a>
 						</div>
 					</div>
+
+					<div id="oil-gas-consulting" class="mx-auto max-w-5xl py-12">
+						<div
+							class="mb-8 text-center"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+						>
+							<h3 class="text-2xl font-bold mb-4 dark:text-white">
+								Financial and Business Consulting Services for the Oil and Gas
+								Industry
+							</h3>
+							<p class="text-gray-500 dark:text-gray-300">
+								Our specialized consulting services for the oil and gas sector
+								focus on cost optimization and financial risk management.
+							</p>
+						</div>
+
+						<div
+							class="bg-white dark:bg-gray-800 rounded-lg border dark:border-gray-700 p-6 mb-8"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+							data-aos-delay="100"
+						>
+							<div class="flex items-center mb-4">
+								<div
+									class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900/30 mr-4"
+								>
+									<i
+										data-lucide="fuel"
+										class="h-5 w-5 text-primary dark:text-primary-300"
+									></i>
+								</div>
+								<h4 class="text-xl font-bold dark:text-white">
+									Cost Optimization
+								</h4>
+							</div>
+
+							<ul class="space-y-4">
+								<li class="flex">
+									<div
+										class="mr-3 mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900/30"
+									>
+										<i
+											data-lucide="check"
+											class="h-4 w-4 text-primary dark:text-primary-300"
+										></i>
+									</div>
+									<p class="text-gray-500 dark:text-gray-300">
+										Bringing empirically tested methods for improving resource
+										management and maximising asset utilisation
+									</p>
+								</li>
+								<li class="flex">
+									<div
+										class="mr-3 mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900/30"
+									>
+										<i
+											data-lucide="check"
+											class="h-4 w-4 text-primary dark:text-primary-300"
+										></i>
+									</div>
+									<p class="text-gray-500 dark:text-gray-300">
+										Identifying opportunities to streamline operations and
+										reduce operational cost, particularly in oil and gas
+										extraction and refining process
+									</p>
+								</li>
+								<li class="flex">
+									<div
+										class="mr-3 mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900/30"
+									>
+										<i
+											data-lucide="check"
+											class="h-4 w-4 text-primary dark:text-primary-300"
+										></i>
+									</div>
+									<p class="text-gray-500 dark:text-gray-300">
+										Identifying likely lacuna in the company's financial process
+										that exposes the company to financial risks, then providing
+										solutions to promptly solve them, leading to increased
+										revenue and profitability
+									</p>
+								</li>
+								<li class="flex">
+									<div
+										class="mr-3 mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900/30"
+									>
+										<i
+											data-lucide="check"
+											class="h-4 w-4 text-primary dark:text-primary-300"
+										></i>
+									</div>
+									<p class="text-gray-500 dark:text-gray-300">
+										Painstakingly review all the banking operations to ensure
+										the company is not exposed to financial risk
+									</p>
+								</li>
+								<li class="flex">
+									<div
+										class="mr-3 mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900/30"
+									>
+										<i
+											data-lucide="check"
+											class="h-4 w-4 text-primary dark:text-primary-300"
+										></i>
+									</div>
+									<p class="text-gray-500 dark:text-gray-300">
+										To subject the monthly bank reconciliation statements to
+										further scrutiny and monitoring to ensure all outstanding
+										items are recovered
+									</p>
+								</li>
+								<li class="flex">
+									<div
+										class="mr-3 mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900/30"
+									>
+										<i
+											data-lucide="check"
+											class="h-4 w-4 text-primary dark:text-primary-300"
+										></i>
+									</div>
+									<p class="text-gray-500 dark:text-gray-300">
+										Review the company's contingent liabilities versus its
+										contingent assets to ensure they are properly reconciled and
+										all outstanding issues duly monitored and promptly resolved
+									</p>
+								</li>
+								<li class="flex">
+									<div
+										class="mr-3 mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900/30"
+									>
+										<i
+											data-lucide="check"
+											class="h-4 w-4 text-primary dark:text-primary-300"
+										></i>
+									</div>
+									<p class="text-gray-500 dark:text-gray-300">
+										Conducting feasibility studies and due diligent reviews for
+										new projects or acquisitions, including project financing
+										options
+									</p>
+								</li>
+							</ul>
+						</div>
+
+						<div
+							class="bg-white dark:bg-gray-800 rounded-lg border dark:border-gray-700 p-6"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+							data-aos-delay="200"
+						>
+							<div class="flex items-center mb-4">
+								<div
+									class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900/30 mr-4"
+								>
+									<i
+										data-lucide="briefcase"
+										class="h-5 w-5 text-primary dark:text-primary-300"
+									></i>
+								</div>
+								<h4 class="text-xl font-bold dark:text-white">
+									Specialized Financial Services
+								</h4>
+							</div>
+
+							<p class="mb-4 text-gray-500 dark:text-gray-300">
+								Rivergate Onyx Investment Ltd offers other specialised financial
+								services covering:
+							</p>
+
+							<div class="grid md:grid-cols-3 gap-6 mt-6">
+								<div class="border dark:border-gray-700 rounded-lg p-4">
+									<div class="flex items-center mb-3">
+										<div
+											class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900/30 mr-3"
+										>
+											<i
+												data-lucide="file-text"
+												class="h-4 w-4 text-primary dark:text-primary-300"
+											></i>
+										</div>
+										<h5 class="font-bold dark:text-white">Executorship</h5>
+									</div>
+									<p class="text-sm text-gray-500 dark:text-gray-300">
+										We assist our clients to handle the rigorous and complex
+										issues in implementing their Will or Intestate of our
+										clients. This is to facilitate the execution of the diseased
+										earnest desires.
+									</p>
+								</div>
+
+								<div class="border dark:border-gray-700 rounded-lg p-4">
+									<div class="flex items-center mb-3">
+										<div
+											class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900/30 mr-3"
+										>
+											<i
+												data-lucide="shield"
+												class="h-4 w-4 text-primary dark:text-primary-300"
+											></i>
+										</div>
+										<h5 class="font-bold dark:text-white">Trusteeship</h5>
+									</div>
+									<p class="text-sm text-gray-500 dark:text-gray-300">
+										We provide a seamless and secured process of handling all
+										Trustees cases. Such that the funds are specially managed to
+										guarantee their security, visibility, and optimum return on
+										investments.
+									</p>
+								</div>
+
+								<div class="border dark:border-gray-700 rounded-lg p-4">
+									<div class="flex items-center mb-3">
+										<div
+											class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900/30 mr-3"
+										>
+											<i
+												data-lucide="refresh-ccw"
+												class="h-4 w-4 text-primary dark:text-primary-300"
+											></i>
+										</div>
+										<h5 class="font-bold dark:text-white">Bankruptcy</h5>
+									</div>
+									<p class="text-sm text-gray-500 dark:text-gray-300">
+										Instead of being permanently destroyed without fulfilling
+										full purpose. We provide our corporate and private clients
+										professionally acceptable ways of using the realised values
+										of their existing assets to settle all their outstanding
+										obligations, as much as possible.
+									</p>
+								</div>
+							</div>
+
+							<p class="mt-6 text-center text-gray-500 dark:text-gray-300">
+								We have active collaborations with the necessary counterparties
+								to ensure seamless processes in all our services.
+							</p>
+						</div>
+					</div>
 				</div>
 			</section>
 
-			<!-- Team Preview Section -->
-			<section id="team" class="w-full py-12 md:py-24 lg:py-32 bg-white">
+			<section
+				id="faq"
+				class="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-gray-900 transition-colors duration-300"
+			>
 				<div class="container mx-auto px-4 md:px-6">
 					<div
-						class="flex flex-col items-center justify-center space-y-4 text-center"
+						class="flex flex-col items-center space-y-4 text-center mb-12"
+						data-aos="fade-up"
+						data-aos-duration="1000"
 					>
 						<div class="space-y-2">
 							<div
-								class="inline-block rounded-lg bg-primary-100 px-3 py-1 text-sm font-medium text-primary"
+								class="inline-block rounded-lg bg-primary-100 dark:bg-primary-900/30 px-3 py-1 text-sm font-medium text-primary dark:text-primary-300"
+							>
+								FAQ
+							</div>
+							<h2
+								class="text-3xl font-bold tracking-tighter sm:text-4xl dark:text-white"
+							>
+								Frequently Asked Questions
+							</h2>
+							<p
+								class="max-w-[900px] text-gray-500 dark:text-gray-300 md:text-xl"
+							>
+								Find answers to common questions about Rivergate Onyx Investment
+								Ltd
+							</p>
+						</div>
+					</div>
+
+					<div class="mx-auto max-w-4xl space-y-6">
+						<div
+							class="rounded-lg border dark:border-gray-700 bg-white dark:bg-gray-800 p-6"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+						>
+							<h3 class="text-lg font-bold mb-2 dark:text-white">
+								How long has Rivergate Onyx Investment Ltd been?
+							</h3>
+							<p class="text-gray-500 dark:text-gray-300">
+								The company was registered with Corporate Affairs Commissions on
+								February 1st, 2007, and commenced silent operations from 2008,
+								which became a full operation since May 2022.
+							</p>
+						</div>
+
+						<div
+							class="rounded-lg border dark:border-gray-700 bg-white dark:bg-gray-800 p-6"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+							data-aos-delay="100"
+						>
+							<h3 class="text-lg font-bold mb-2 dark:text-white">
+								Does Rivergate Onyx Investment Ltd have well structured Board
+								and Mgt team?
+							</h3>
+							<p class="text-gray-500 dark:text-gray-300">
+								Absolutely. The company's Board is made up of professionals with
+								unbroken records of impeccable integrity for decades. The Board
+								members are drawn from diverse professional backgrounds, which
+								facilitates cross fertilisation of idea.
+							</p>
+						</div>
+
+						<div
+							class="rounded-lg border dark:border-gray-700 bg-white dark:bg-gray-800 p-6"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+							data-aos-delay="200"
+						>
+							<h3 class="text-lg font-bold mb-2 dark:text-white">
+								Can I trust Rivergate Onyx Investment Ltd?
+							</h3>
+							<p class="text-gray-500 dark:text-gray-300">
+								Very clearly, Rivergate Onyx Investment Ltd foundation is
+								integrity, excellence, and speed. Both our services and mgt can
+								be trusted <span class="font-bold">100%</span>. Because everyone
+								is held responsible for his/her actions, while the company
+								accepts full responsibility to ensure the right service is
+								delivered to our customers.
+							</p>
+						</div>
+					</div>
+
+					<div
+						class="text-center mt-8"
+						data-aos="fade-up"
+						data-aos-duration="1000"
+						data-aos-delay="300"
+					>
+						<a
+							href="faq.html"
+							class="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-base font-medium text-white shadow transition-colors hover:bg-primary-600"
+						>
+							View All FAQs
+							<i data-lucide="arrow-right" class="ml-2 h-4 w-4"></i>
+						</a>
+					</div>
+				</div>
+			</section>
+
+			<section
+				id="team"
+				class="w-full py-12 md:py-24 lg:py-32 bg-gray-50 dark:bg-gray-800 transition-colors duration-300"
+			>
+				<div class="container mx-auto px-4 md:px-6">
+					<div
+						class="flex flex-col items-center justify-center space-y-4 text-center"
+						data-aos="fade-up"
+						data-aos-duration="1000"
+					>
+						<div class="space-y-2">
+							<div
+								class="inline-block rounded-lg bg-primary-100 dark:bg-primary-900/30 px-3 py-1 text-sm font-medium text-primary dark:text-primary-300"
 							>
 								Our Team
 							</div>
-							<h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">
+							<h2
+								class="text-3xl font-bold tracking-tighter sm:text-5xl dark:text-white"
+							>
 								Meet Our Leadership
 							</h2>
-							<p class="max-w-[900px] text-gray-500 md:text-xl">
+							<p
+								class="max-w-[900px] text-gray-500 dark:text-gray-300 md:text-xl"
+							>
 								Our board of directors comprises experienced professionals with
 								expertise in various fields.
 							</p>
@@ -344,7 +745,11 @@
 					<div
 						class="mx-auto grid max-w-5xl grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 py-12"
 					>
-						<div class="flex flex-col items-center space-y-4">
+						<div
+							class="team-card flex flex-col items-center space-y-4"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+						>
 							<div class="relative h-40 w-40 overflow-hidden rounded-full">
 								<img
 									src="https://placehold.co/160x160/f8f9fa/a3a3a3?text=Dr.+Nweke"
@@ -353,11 +758,26 @@
 								/>
 							</div>
 							<div class="space-y-2 text-center">
-								<h3 class="text-xl font-bold">Dr. Ifeanyi Gordian Nweke</h3>
-								<p class="text-sm text-gray-500">Chairman</p>
+								<h3 class="text-xl font-bold dark:text-white">
+									Dr. Ifeanyi Gordian Nweke
+								</h3>
+								<p class="text-sm text-gray-500 dark:text-gray-300">Chairman</p>
+							</div>
+							<div class="team-social flex space-x-3">
+								<a href="#" class="text-gray-400 hover:text-primary">
+									<i data-lucide="linkedin" class="h-5 w-5"></i>
+								</a>
+								<a href="#" class="text-gray-400 hover:text-primary">
+									<i data-lucide="mail" class="h-5 w-5"></i>
+								</a>
 							</div>
 						</div>
-						<div class="flex flex-col items-center space-y-4">
+						<div
+							class="team-card flex flex-col items-center space-y-4"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+							data-aos-delay="100"
+						>
 							<div class="relative h-40 w-40 overflow-hidden rounded-full">
 								<img
 									src="https://placehold.co/160x160/f8f9fa/a3a3a3?text=C.+Okonta"
@@ -366,11 +786,28 @@
 								/>
 							</div>
 							<div class="space-y-2 text-center">
-								<h3 class="text-xl font-bold">Chiedu Samuel Okonta</h3>
-								<p class="text-sm text-gray-500">Managing Director/CEO</p>
+								<h3 class="text-xl font-bold dark:text-white">
+									Chiedu Samuel Okonta
+								</h3>
+								<p class="text-sm text-gray-500 dark:text-gray-300">
+									Managing Director/CEO
+								</p>
+							</div>
+							<div class="team-social flex space-x-3">
+								<a href="#" class="text-gray-400 hover:text-primary">
+									<i data-lucide="linkedin" class="h-5 w-5"></i>
+								</a>
+								<a href="#" class="text-gray-400 hover:text-primary">
+									<i data-lucide="mail" class="h-5 w-5"></i>
+								</a>
 							</div>
 						</div>
-						<div class="flex flex-col items-center space-y-4">
+						<div
+							class="team-card flex flex-col items-center space-y-4"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+							data-aos-delay="200"
+						>
 							<div class="relative h-40 w-40 overflow-hidden rounded-full">
 								<img
 									src="https://placehold.co/160x160/f8f9fa/a3a3a3?text=M.+Onojake"
@@ -379,32 +816,51 @@
 								/>
 							</div>
 							<div class="space-y-2 text-center">
-								<h3 class="text-xl font-bold">Mac Onojake & Co</h3>
-								<p class="text-sm text-gray-500">Lead Partner</p>
+								<h3 class="text-xl font-bold dark:text-white">
+									Mac Onojake & Co
+								</h3>
+								<p class="text-sm text-gray-500 dark:text-gray-300">
+									Lead Partner
+								</p>
+							</div>
+							<div class="team-social flex space-x-3">
+								<a href="#" class="text-gray-400 hover:text-primary">
+									<i data-lucide="linkedin" class="h-5 w-5"></i>
+								</a>
+								<a href="#" class="text-gray-400 hover:text-primary">
+									<i data-lucide="mail" class="h-5 w-5"></i>
+								</a>
 							</div>
 						</div>
 					</div>
-					<div class="flex justify-center">
+					<div
+						class="flex justify-center"
+						data-aos="fade-up"
+						data-aos-duration="1000"
+						data-aos-delay="300"
+					>
 						<a
-							href="#"
+							href="team.html"
 							class="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-primary-600"
 						>
 							View All Team Members
+							<i data-lucide="arrow-right" class="ml-2 h-4 w-4"></i>
 						</a>
 					</div>
 				</div>
 			</section>
 
-			<!-- Contact CTA Section -->
 			<section
 				id="contact"
 				class="w-full py-12 md:py-24 lg:py-32 bg-primary text-white"
 			>
 				<div class="container mx-auto px-4 md:px-6">
 					<div
-						class="flex flex-col items-center justify-center space-y-4 text-center"
+						class="flex flex-col md:flex-row items-center justify-between gap-8"
+						data-aos="fade-up"
+						data-aos-duration="1000"
 					>
-						<div class="space-y-2">
+						<div class="md:w-2/3">
 							<h2
 								class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
 							>
@@ -416,15 +872,15 @@
 								profitability.
 							</p>
 						</div>
-						<div class="space-x-4">
+						<div class="md:w-1/3 flex flex-col sm:flex-row gap-4">
 							<a
-								href="#"
+								href="contact.html"
 								class="inline-flex items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium text-primary shadow transition-colors hover:bg-gray-100"
 							>
 								Contact Us
 							</a>
 							<a
-								href="#"
+								href="services.html"
 								class="inline-flex items-center justify-center rounded-md border border-white bg-transparent px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-white/10"
 							>
 								Explore Services
@@ -436,126 +892,189 @@
 		</main>
 
 		<!-- Footer -->
-		<footer class="w-full border-t bg-white py-8 md:py-12">
+		<footer
+			class="w-full border-t bg-white dark:bg-gray-900 dark:border-gray-800 py-8 md:py-12 transition-colors duration-300"
+		>
 			<div
-				class="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between gap-8"
+				class="container mx-auto flex flex-col md:flex-row justify-between gap-8"
 			>
-				<div class="flex flex-col gap-4 md:w-1/3">
+				<div class="flex flex-col gap-4 md:w-4/5">
 					<div class="flex items-center gap-2">
-						<i data-lucide="building" class="h-6 w-6"></i>
-						<span class="font-bold">RIVERGATE ONYX INVESTMENT [ROI] LTD</span>
+						<i data-lucide="building" class="h-6 w-6 text-primary"></i>
+						<span class="font-bold dark:text-white"
+							>RIVERGATE ONYX INVESTMENT [ROI] LTD</span
+						>
 					</div>
-					<p class="text-sm text-gray-500">
+					<p class="text-sm text-gray-500 dark:text-gray-400">
 						Building and sustaining operational efficiency, leading to enhanced
 						productivity, liquidity, and profitability.
 					</p>
-					<div class="flex items-center gap-2 text-sm text-gray-500">
+					<div
+						class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400"
+					>
 						<i data-lucide="map-pin" class="h-4 w-4"></i>
 						<span>
 							No 23B. Ondo Close, Crystal Estate, Behind Durba hotel, Amuwo LGA,
 							Lagos, Nigeria
 						</span>
 					</div>
-					<div class="flex items-center gap-2 text-sm text-gray-500">
+					<div
+						class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400"
+					>
 						<i data-lucide="mail" class="h-4 w-4"></i>
 						<a
-							href="/cdn-cgi/l/email-protection#93e1fae5f6e1f4f2e7f6fcfdeaebffe7f7d3f4fef2faffbdf0fcfe"
-							class="hover:underline"
+							href="mailto:rivergateonyxltd@gmail.com"
+							class="hover:underline hover:text-primary"
 						>
-							<span
-								class="__cf_email__"
-								data-cfemail="a9dbc0dfccdbcec8ddccc6c7d0d1c5ddcde9cec4c8c0c587cac6c4"
-								>[email&#160;protected]</span
-							>
+							rivergateonyxltd@gmail.com
 						</a>
 					</div>
-					<div class="flex items-center gap-2 text-sm text-gray-500">
+					<div
+						class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400"
+					>
 						<i data-lucide="phone" class="h-4 w-4"></i>
-						<a href="tel:+2349079103248" class="hover:underline">
+						<a
+							href="tel:+2349079103248"
+							class="hover:underline hover:text-primary"
+						>
 							+234 907 910 3248
 						</a>
 						<span>/</span>
-						<a href="tel:+2348139993322" class="hover:underline">
+						<a
+							href="tel:+2348139993322"
+							class="hover:underline hover:text-primary"
+						>
 							+234 813 999 3322
+						</a>
+					</div>
+					<div class="flex space-x-4 mt-2">
+						<a
+							href="#"
+							class="text-gray-500 dark:text-gray-400 hover:text-primary"
+						>
+							<i data-lucide="facebook" class="h-5 w-5"></i>
+						</a>
+						<a
+							href="#"
+							class="text-gray-500 dark:text-gray-400 hover:text-primary"
+						>
+							<i data-lucide="twitter" class="h-5 w-5"></i>
+						</a>
+						<a
+							href="#"
+							class="text-gray-500 dark:text-gray-400 hover:text-primary"
+						>
+							<i data-lucide="linkedin" class="h-5 w-5"></i>
+						</a>
+						<a
+							href="#"
+							class="text-gray-500 dark:text-gray-400 hover:text-primary"
+						>
+							<i data-lucide="instagram" class="h-5 w-5"></i>
 						</a>
 					</div>
 				</div>
 				<div class="grid grid-cols-2 md:grid-cols-3 gap-8">
 					<div class="flex flex-col gap-2">
-						<h3 class="font-semibold text-sm">Pages</h3>
-						<a href="#" class="text-sm text-gray-500 hover:underline"> Home </a>
-						<a href="#" class="text-sm text-gray-500 hover:underline">
+						<h3 class="font-semibold text-sm dark:text-white">Pages</h3>
+						<a
+							href="index.html"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
+							Home
+						</a>
+						<a
+							href="about.html"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
 							About
 						</a>
-						<a href="#" class="text-sm text-gray-500 hover:underline">
+						<a
+							href="services.html"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
 							Services
 						</a>
-						<a href="#" class="text-sm text-gray-500 hover:underline"> Team </a>
-						<a href="#" class="text-sm text-gray-500 hover:underline">
+						<!-- <a
+							href="properties.html"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
+							Properties
+						</a> -->
+						<a
+							href="team.html"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
+							Team
+						</a>
+						<!-- <a
+							href="blog.html"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
+							Blog
+						</a> -->
+						<a
+							href="faq.html"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
+							FAQ
+						</a>
+						<a
+							href="contact.html"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
 							Contact
 						</a>
 					</div>
-					<div class="flex flex-col gap-2">
-						<h3 class="font-semibold text-sm">Services</h3>
-						<a href="#" class="text-sm text-gray-500 hover:underline">
+					<!-- <div class="flex flex-col gap-2">
+						<h3 class="font-semibold text-sm dark:text-white">Services</h3>
+						<a
+							href="consulting-services.html"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
 							Consulting Services
 						</a>
-						<a href="#" class="text-sm text-gray-500 hover:underline">
+						<a
+							href="real-estate-marketing.html"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
 							Real Estate Marketing
 						</a>
-						<a href="#" class="text-sm text-gray-500 hover:underline">
+						<a
+							href="real-estate-management.html"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
 							Real Estate Management
 						</a>
-					</div>
+					</div> -->
 					<div class="flex flex-col gap-2 col-span-2 md:col-span-1">
-						<h3 class="font-semibold text-sm">Connect</h3>
+						<h3 class="font-semibold text-sm dark:text-white">Connect</h3>
 						<a
-							href="mailto:chiedurivergate@gmail.com"
-							class="text-sm text-gray-500 hover:underline"
+							href="https://www.chiedurivergate.com"
+							target="_blank"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
 						>
-							chiedurivergate@gmail.com
+							www.chiedurivergate.com
 						</a>
 					</div>
 				</div>
 			</div>
 			<div
-				class="container mx-auto px-4 md:px-6 mt-8 flex flex-col md:flex-row justify-between items-center gap-4 border-t pt-8"
+				class="container mx-auto mt-8 flex flex-col md:flex-row justify-between items-center gap-4 border-t border-gray-200 dark:border-gray-800 pt-8"
 			>
-				<p class="text-xs text-gray-500 text-center md:text-left">
+				<p
+					class="text-xs text-gray-500 dark:text-gray-400 text-center md:text-left"
+				>
 					&copy; <span id="current-year"></span> RIVERGATE ONYX INVESTMENT [ROI]
 					LTD. All rights reserved.
 				</p>
 				<div class="flex gap-4">
-					<a href="#" class="text-xs text-gray-500 hover:underline">
-						Privacy Policy
-					</a>
-					<a href="#" class="text-xs text-gray-500 hover:underline">
-						Terms of Service
-					</a>
+					<!-- Footer policy links will be populated by JavaScript -->
 				</div>
 			</div>
 		</footer>
 
-		<!-- JavaScript -->
-		<script
-			data-cfasync="false"
-			src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
-		></script>
-		<script>
-			// Initialize Lucide icons
-			lucide.createIcons();
-
-			// Mobile menu toggle
-			const mobileMenuButton = document.getElementById("mobile-menu-button");
-			const mobileMenu = document.getElementById("mobile-menu");
-
-			mobileMenuButton.addEventListener("click", () => {
-				mobileMenu.classList.toggle("hidden");
-			});
-
-			// Set current year in footer
-			document.getElementById("current-year").textContent =
-				new Date().getFullYear();
-		</script>
+		<script src="js/script.js"></script>
+		<script src="js/navbar.js"></script>
 	</body>
 </html>

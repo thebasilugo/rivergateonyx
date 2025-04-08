@@ -3,9 +3,734 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>ROI Contact page</title>
+		<title>Contact Us - RIVERGATE ONYX INVESTMENT [ROI] LTD</title>
+		<meta
+			name="description"
+			content="Contact RIVERGATE ONYX INVESTMENT [ROI] LTD for inquiries about our financial consulting, real estate marketing, and property management services."
+		/>
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" href="assets/images/favicon.png" />
+		<!-- Tailwind CSS -->
+		<script src="https://cdn.tailwindcss.com"></script>
+		<!-- Custom Tailwind Config -->
+		<script>
+			tailwind.config = {
+				darkMode: "class",
+				theme: {
+					extend: {
+						colors: {
+							primary: {
+								DEFAULT: "#0f766e",
+								50: "#f0fdfa",
+								100: "#ccfbf1",
+								200: "#99f6e4",
+								300: "#5eead4",
+								400: "#2dd4bf",
+								500: "#14b8a6",
+								600: "#0d9488",
+								700: "#0f766e",
+								800: "#115e59",
+								900: "#134e4a",
+								950: "#042f2e",
+							},
+							secondary: {
+								DEFAULT: "#475569",
+								50: "#f8fafc",
+								100: "#f1f5f9",
+								200: "#e2e8f0",
+								300: "#cbd5e1",
+								400: "#94a3b8",
+								500: "#64748b",
+								600: "#475569",
+								700: "#334155",
+								800: "#1e293b",
+								900: "#0f172a",
+								950: "#020617",
+							},
+						},
+						fontFamily: {
+							sans: ["Inter", "sans-serif"],
+						},
+						animation: {
+							"fade-in": "fadeIn 0.5s ease-in-out",
+							"slide-up": "slideUp 0.5s ease-in-out",
+						},
+						keyframes: {
+							fadeIn: {
+								"0%": { opacity: "0" },
+								"100%": { opacity: "1" },
+							},
+							slideUp: {
+								"0%": { transform: "translateY(20px)", opacity: "0" },
+								"100%": { transform: "translateY(0)", opacity: "1" },
+							},
+						},
+					},
+				},
+			};
+		</script>
+		<!-- Inter Font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Lucide Icons -->
+		<script src="https://unpkg.com/lucide@latest"></script>
+		<!-- AOS Animation Library -->
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="style.css" />
 	</head>
-	<body>
-		Contact page
+	<body
+		class="flex flex-col min-h-screen bg-white dark:bg-gray-900 dark:text-white transition-colors duration-300 overflow-x-hidden"
+	>
+		<!-- Preloader -->
+		<div
+			id="preloader"
+			class="fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-gray-900"
+		>
+			<div
+				class="animate-spin rounded-full h-16 w-16 border-t-4 border-primary border-solid"
+			></div>
+		</div>
+
+		<!-- Scroll to Top Button -->
+		<button
+			id="scrollToTop"
+			class="scroll-to-top bg-primary hover:bg-primary-600 text-white p-3 rounded-full shadow-lg"
+		>
+			<i data-lucide="chevron-up" class="h-6 w-6"></i>
+		</button>
+
+		<!-- Coming Soon Modal -->
+		<div
+			id="coming-soon-modal"
+			class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black bg-opacity-50"
+		>
+			<div
+				class="bg-white dark:bg-gray-800 rounded-lg p-8 max-w-md w-full mx-4 shadow-xl transform transition-all"
+			>
+				<div class="flex justify-between items-center mb-4">
+					<h3 class="text-xl font-bold dark:text-white">Coming Soon</h3>
+					<button
+						id="close-modal"
+						class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+					>
+						<i data-lucide="x" class="h-6 w-6"></i>
+					</button>
+				</div>
+				<div class="mb-6">
+					<p class="text-gray-600 dark:text-gray-300 mb-4">
+						This page is currently under development and will be available soon.
+					</p>
+					<p class="text-gray-600 dark:text-gray-300">
+						Thank you for your patience!
+					</p>
+				</div>
+				<div class="flex justify-end">
+					<button
+						id="close-modal-btn"
+						class="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-primary-600"
+					>
+						Close
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Header -->
+		<header
+			class="sticky top-0 z-40 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:bg-gray-900/95 dark:border-gray-800 transition-colors duration-300"
+		>
+			<div class="container mx-auto flex h-16 items-center justify-between">
+				<div class="flex items-center gap-2">
+					<a href="index.html" class="flex items-center space-x-2">
+						<i data-lucide="building" class="h-6 w-6 text-primary"></i>
+						<span class="hidden font-bold sm:inline-block"
+							>RIVERGATE ONYX INVESTMENT [ROI] LTD</span
+						>
+					</a>
+				</div>
+				<nav class="hidden md:flex items-center gap-6 text-sm">
+					<!-- Navigation items will be populated by JavaScript -->
+				</nav>
+				<div class="flex items-center gap-2">
+					<button
+						id="darkModeToggle"
+						class="p-2 rounded-full text-gray-500 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+					>
+						<i data-lucide="sun" class="h-5 w-5 dark:hidden"></i>
+						<i data-lucide="moon" class="h-5 w-5 hidden dark:block"></i>
+					</button>
+					<a
+						href="contact.html"
+						class="hidden md:inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-primary-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary"
+					>
+						Get Started
+					</a>
+					<button
+						id="mobile-menu-button"
+						class="inline-flex items-center justify-center rounded-md border border-gray-200 dark:border-gray-700 p-2 text-gray-500 dark:text-gray-300 md:hidden"
+					>
+						<i data-lucide="menu" class="h-5 w-5"></i>
+						<span class="sr-only">Toggle Menu</span>
+					</button>
+				</div>
+			</div>
+			<!-- Mobile Menu -->
+			<div id="mobile-menu" class="hidden md:hidden">
+				<div class="space-y-1 px-4 py-3 border-t dark:border-gray-800">
+					<!-- Mobile navigation items will be populated by JavaScript -->
+				</div>
+			</div>
+		</header>
+
+		<main class="flex-1">
+			<!-- Page Header -->
+			<section
+				class="w-full py-12 md:py-24 lg:py-32 bg-gray-50 dark:bg-gray-800 transition-colors duration-300"
+			>
+				<div class="container mx-auto">
+					<div
+						class="flex flex-col items-center space-y-4 text-center"
+						data-aos="fade-up"
+						data-aos-duration="1000"
+					>
+						<div class="space-y-2">
+							<h1
+								class="text-3xl font-bold tracking-tighter sm:text-5xl dark:text-white"
+							>
+								Contact Us
+							</h1>
+							<p
+								class="max-w-[700px] text-gray-500 dark:text-gray-300 md:text-xl"
+							>
+								Get in touch with our team to learn more about our services and
+								how we can help you achieve your financial goals.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Contact Information -->
+			<section
+				class="w-full py-12 md:py-16 bg-white dark:bg-gray-900 transition-colors duration-300"
+			>
+				<div class="container mx-auto">
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+						<div
+							class="flex flex-col items-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg border dark:border-gray-700"
+							data-aos="fade-up"
+							data-aos-duration="800"
+						>
+							<div
+								class="bg-primary-100 dark:bg-primary-900/30 p-4 rounded-full mb-4"
+							>
+								<i
+									data-lucide="map-pin"
+									class="h-6 w-6 text-primary dark:text-primary-300"
+								></i>
+							</div>
+							<h3 class="text-xl font-bold mb-2 dark:text-white">
+								Our Location
+							</h3>
+							<p class="text-center text-gray-500 dark:text-gray-300">
+								No 23B. Ondo Close, Crystal Estate,<br />
+								Behind Durba hotel, Amuwo LGA,<br />
+								Lagos, Nigeria
+							</p>
+						</div>
+
+						<div
+							class="flex flex-col items-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg border dark:border-gray-700"
+							data-aos="fade-up"
+							data-aos-duration="800"
+							data-aos-delay="100"
+						>
+							<div
+								class="bg-primary-100 dark:bg-primary-900/30 p-4 rounded-full mb-4"
+							>
+								<i
+									data-lucide="phone"
+									class="h-6 w-6 text-primary dark:text-primary-300"
+								></i>
+							</div>
+							<h3 class="text-xl font-bold mb-2 dark:text-white">
+								Phone Numbers
+							</h3>
+							<p class="text-center text-gray-500 dark:text-gray-300">
+								<a href="tel:+2349079103248" class="hover:text-primary"
+									>+234 907 910 3248</a
+								><br />
+								<a href="tel:+2348139993322" class="hover:text-primary"
+									>+234 813 999 3322</a
+								>
+							</p>
+						</div>
+
+						<div
+							class="flex flex-col items-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg border dark:border-gray-700"
+							data-aos="fade-up"
+							data-aos-duration="800"
+							data-aos-delay="200"
+						>
+							<div
+								class="bg-primary-100 dark:bg-primary-900/30 p-4 rounded-full mb-4"
+							>
+								<i
+									data-lucide="mail"
+									class="h-6 w-6 text-primary dark:text-primary-300"
+								></i>
+							</div>
+							<h3 class="text-xl font-bold mb-2 dark:text-white">
+								Email Address
+							</h3>
+							<p class="text-center text-gray-500 dark:text-gray-300">
+								<a
+									href="mailto:rivergateonyxltd@gmail.com"
+									class="hover:text-primary"
+									>rivergateonyxltd@gmail.com</a
+								>
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Contact Form -->
+			<!-- <section
+				class="w-full py-12 md:py-24 lg:py-32 bg-gray-50 dark:bg-gray-800 transition-colors duration-300"
+			>
+				<div class="container mx-auto">
+					<div class="max-w-3xl mx-auto">
+						<div
+							class="text-center mb-12"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+						>
+							<div
+								class="inline-block rounded-lg bg-primary-100 dark:bg-primary-900/30 px-3 py-1 text-sm font-medium text-primary dark:text-primary-300 mb-4"
+							>
+								Get In Touch
+							</div>
+							<h2
+								class="text-3xl font-bold tracking-tighter sm:text-4xl dark:text-white mb-4"
+							>
+								Send Us a Message
+							</h2>
+							<p class="text-gray-500 dark:text-gray-300 md:text-xl">
+								Fill out the form below and we'll get back to you as soon as
+								possible.
+							</p>
+						</div>
+
+						<div
+							class="bg-white dark:bg-gray-900 rounded-lg shadow-sm border dark:border-gray-700 p-8"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+							data-aos-delay="100"
+						>
+							<form id="contact-form" class="space-y-6">
+								<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+									<div>
+										<label
+											for="name"
+											class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+										>
+											Full Name
+										</label>
+										<input
+											type="text"
+											id="name"
+											name="name"
+											class="form-input w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-2 text-gray-900 dark:text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+											placeholder="Your full name"
+											required
+										/>
+									</div>
+									<div>
+										<label
+											for="email"
+											class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+										>
+											Email Address
+										</label>
+										<input
+											type="email"
+											id="email"
+											name="email"
+											class="form-input w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-2 text-gray-900 dark:text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+											placeholder="Your email address"
+											required
+										/>
+									</div>
+								</div>
+								<div>
+									<label
+										for="phone"
+										class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+									>
+										Phone Number (Optional)
+									</label>
+									<input
+										type="tel"
+										id="phone"
+										name="phone"
+										class="form-input w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-2 text-gray-900 dark:text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+										placeholder="Your phone number"
+									/>
+								</div>
+								<div>
+									<label
+										for="subject"
+										class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+									>
+										Subject
+									</label>
+									<select
+										id="subject"
+										name="subject"
+										class="form-input w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-2 text-gray-900 dark:text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+										required
+									>
+										<option value="" disabled selected>Select a subject</option>
+										<option value="general">General Inquiry</option>
+										<option value="consulting">Consulting Services</option>
+										<option value="real-estate">Real Estate</option>
+										<option value="other">Other</option>
+									</select>
+								</div>
+								<div>
+									<label
+										for="message"
+										class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+									>
+										Message
+									</label>
+									<textarea
+										id="message"
+										name="message"
+										rows="5"
+										class="form-input w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-2 text-gray-900 dark:text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+										placeholder="Your message"
+										required
+									></textarea>
+								</div>
+								<div>
+									<button
+										id="submit-button"
+										type="submit"
+										class="inline-flex w-full items-center justify-center rounded-md bg-primary px-6 py-3 text-base font-medium text-white shadow transition-colors hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+									>
+										Send Message
+									</button>
+								</div>
+							</form>
+
+							<div id="form-success" class="hidden text-center py-8">
+								<div
+									class="inline-flex items-center justify-center rounded-full bg-green-100 p-4 mb-4"
+								>
+									<i data-lucide="check" class="h-8 w-8 text-green-600"></i>
+								</div>
+								<h3 class="text-xl font-bold mb-2 dark:text-white">
+									Message Sent Successfully!
+								</h3>
+								<p class="text-gray-500 dark:text-gray-300 mb-6">
+									Thank you for contacting us. We'll get back to you as soon as
+									possible.
+								</p>
+								<button
+									onclick="window.location.reload()"
+									class="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-primary-600"
+								>
+									Send Another Message
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section> -->
+
+			<!-- Map Section -->
+			<section
+				class="w-full py-12 md:py-24 bg-white dark:bg-gray-900 transition-colors duration-300"
+			>
+				<div class="container mx-auto">
+					<div
+						class="text-center mb-12"
+						data-aos="fade-up"
+						data-aos-duration="1000"
+					>
+						<h2
+							class="text-3xl font-bold tracking-tighter sm:text-4xl dark:text-white mb-4"
+						>
+							Our Location
+						</h2>
+						<p
+							class="text-gray-500 dark:text-gray-300 md:text-xl max-w-2xl mx-auto"
+						>
+							Visit our office in Lagos, Nigeria. We're located at Crystal
+							Estate, Amuwo LGA.
+						</p>
+					</div>
+
+					<div
+						class="rounded-lg overflow-hidden border dark:border-gray-700 h-[400px]"
+						data-aos="fade-up"
+						data-aos-duration="1000"
+						data-aos-delay="100"
+					>
+						<!-- Placeholder for Google Map -->
+						<div
+							class="w-full h-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center"
+						>
+							<div class="text-center">
+								<i
+									data-lucide="map"
+									class="h-12 w-12 text-gray-400 dark:text-gray-500 mx-auto mb-4"
+								></i>
+								<p class="text-gray-500 dark:text-gray-400">Map loading...</p>
+								<p class="text-sm text-gray-400 dark:text-gray-500 mt-2">
+									No 23B. Ondo Close, Crystal Estate, Lagos, Nigeria
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<!-- Footer -->
+		<footer
+			class="w-full border-t bg-white dark:bg-gray-900 dark:border-gray-800 py-8 md:py-12 transition-colors duration-300"
+		>
+			<div
+				class="container mx-auto flex flex-col md:flex-row justify-between gap-8"
+			>
+				<div class="flex flex-col gap-4 md:w-4/5">
+					<div class="flex items-center gap-2">
+						<i data-lucide="building" class="h-6 w-6 text-primary"></i>
+						<span class="font-bold dark:text-white"
+							>RIVERGATE ONYX INVESTMENT [ROI] LTD</span
+						>
+					</div>
+					<p class="text-sm text-gray-500 dark:text-gray-400">
+						Building and sustaining operational efficiency, leading to enhanced
+						productivity, liquidity, and profitability.
+					</p>
+					<div
+						class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400"
+					>
+						<i data-lucide="map-pin" class="h-4 w-4"></i>
+						<span>
+							No 23B. Ondo Close, Crystal Estate, Behind Durba hotel, Amuwo LGA,
+							Lagos, Nigeria
+						</span>
+					</div>
+					<div
+						class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400"
+					>
+						<i data-lucide="mail" class="h-4 w-4"></i>
+						<a
+							href="mailto:rivergateonyxltd@gmail.com"
+							class="hover:underline hover:text-primary"
+						>
+							rivergateonyxltd@gmail.com
+						</a>
+					</div>
+					<div
+						class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400"
+					>
+						<i data-lucide="phone" class="h-4 w-4"></i>
+						<a
+							href="tel:+2349079103248"
+							class="hover:underline hover:text-primary"
+						>
+							+234 907 910 3248
+						</a>
+						<span>/</span>
+						<a
+							href="tel:+2348139993322"
+							class="hover:underline hover:text-primary"
+						>
+							+234 813 999 3322
+						</a>
+					</div>
+					<div class="flex space-x-4 mt-2">
+						<a
+							href="#"
+							class="text-gray-500 dark:text-gray-400 hover:text-primary"
+						>
+							<i data-lucide="facebook" class="h-5 w-5"></i>
+						</a>
+						<a
+							href="#"
+							class="text-gray-500 dark:text-gray-400 hover:text-primary"
+						>
+							<i data-lucide="twitter" class="h-5 w-5"></i>
+						</a>
+						<a
+							href="#"
+							class="text-gray-500 dark:text-gray-400 hover:text-primary"
+						>
+							<i data-lucide="linkedin" class="h-5 w-5"></i>
+						</a>
+						<a
+							href="#"
+							class="text-gray-500 dark:text-gray-400 hover:text-primary"
+						>
+							<i data-lucide="instagram" class="h-5 w-5"></i>
+						</a>
+					</div>
+				</div>
+				<div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+					<div class="flex flex-col gap-2">
+						<h3 class="font-semibold text-sm dark:text-white">Pages</h3>
+						<a
+							href="index.html"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
+							Home
+						</a>
+						<a
+							href="about.html"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
+							About
+						</a>
+						<a
+							href="services.html"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
+							Services
+						</a>
+						<!-- <a
+							href="properties.html"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
+							Properties
+						</a> -->
+						<a
+							href="team.html"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
+							Team
+						</a>
+						<!-- <a
+							href="blog.html"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
+							Blog
+						</a> -->
+						<a
+							href="faq.html"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
+							FAQ
+						</a>
+						<a
+							href="contact.html"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
+							Contact
+						</a>
+					</div>
+					<!-- <div class="flex flex-col gap-2">
+						<h3 class="font-semibold text-sm dark:text-white">Services</h3>
+						<a
+							href="consulting-services.html"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
+							Consulting Services
+						</a>
+						<a
+							href="real-estate-marketing.html"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
+							Real Estate Marketing
+						</a>
+						<a
+							href="real-estate-management.html"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
+							Real Estate Management
+						</a>
+					</div> -->
+					<div class="flex flex-col gap-2 col-span-2 md:col-span-1">
+						<h3 class="font-semibold text-sm dark:text-white">Connect</h3>
+						<a
+							href="https://www.chiedurivergate.com"
+							target="_blank"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
+							www.chiedurivergate.com
+						</a>
+					</div>
+				</div>
+			</div>
+			<div
+				class="container mx-auto mt-8 flex flex-col md:flex-row justify-between items-center gap-4 border-t border-gray-200 dark:border-gray-800 pt-8"
+			>
+				<p
+					class="text-xs text-gray-500 dark:text-gray-400 text-center md:text-left"
+				>
+					&copy; <span id="current-year"></span> RIVERGATE ONYX INVESTMENT [ROI]
+					LTD. All rights reserved.
+				</p>
+				<div class="flex gap-4">
+					<!-- Footer policy links will be populated by JavaScript -->
+				</div>
+			</div>
+		</footer>
+
+		<!-- JavaScript -->
+		<script src="js/script.js"></script>
+		<script src="js/navbar.js"></script>
+		<script>
+			// Coming Soon Modal Functionality
+			document.addEventListener("DOMContentLoaded", function () {
+				const comingSoonLinks = document.querySelectorAll(".coming-soon-link");
+				const comingSoonModal = document.getElementById("coming-soon-modal");
+				const closeModalBtn = document.getElementById("close-modal-btn");
+				const closeModalX = document.getElementById("close-modal");
+
+				comingSoonLinks.forEach((link) => {
+					link.addEventListener("click", function (e) {
+						e.preventDefault();
+						comingSoonModal.classList.remove("hidden");
+					});
+				});
+
+				closeModalBtn.addEventListener("click", function () {
+					comingSoonModal.classList.add("hidden");
+				});
+
+				closeModalX.addEventListener("click", function () {
+					comingSoonModal.classList.add("hidden");
+				});
+
+				// Close modal when clicking outside
+				comingSoonModal.addEventListener("click", function (e) {
+					if (e.target === comingSoonModal) {
+						comingSoonModal.classList.add("hidden");
+					}
+				});
+
+				// Close modal with Escape key
+				document.addEventListener("keydown", function (e) {
+					if (
+						e.key === "Escape" &&
+						!comingSoonModal.classList.contains("hidden")
+					) {
+						comingSoonModal.classList.add("hidden");
+					}
+				});
+			});
+		</script>
 	</body>
 </html>
