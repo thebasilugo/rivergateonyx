@@ -1,0 +1,7 @@
+/* Main Styles for Rivergate Onyx Investment Ltd Website */
+
+/* Base Styles */
+body {
+	font-family: "Inter", sans-serif;
+	overflow-x: hidden; /* Prevent horizontal scrolling */
+}
