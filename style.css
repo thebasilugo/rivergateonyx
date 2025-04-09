@@ -5,3 +5,15 @@ body {
 	font-family: "Inter", sans-serif;
 	overflow-x: hidden; /* Prevent horizontal scrolling */
 }
+
+/* Preloader */
+#preloader {
+	position: fixed;
+	inset: 0;
+	z-index: 50;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #ffffff;
+	transition: opacity 0.5s ease;
+}
