@@ -17,3 +17,8 @@ body {
 	background-color: #ffffff;
 	transition: opacity 0.5s ease;
 }
+
+.dark #preloader {
+	background-color: #111827;
+}
+
