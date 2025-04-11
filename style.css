@@ -21,3 +21,17 @@ body {
 .dark #preloader {
 	background-color: #111827;
 }
+/* Scroll to Top Button */
+.scroll-to-top {
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 99;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.scroll-to-top:hover {
+	transform: translateY(-5px);
+}
