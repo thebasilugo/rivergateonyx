@@ -106,3 +106,19 @@ body {
 	padding-left: 1rem;
 	padding-right: 1rem;
 }
+
+/* Mobile Styles */
+@media (max-width: 640px) {
+	.container {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
+	.faq-categories {
+		overflow-x: auto;
+		white-space: nowrap;
+		-webkit-overflow-scrolling: touch;
+		padding-bottom: 1rem;
+		justify-content: flex-start;
+	}
+}
