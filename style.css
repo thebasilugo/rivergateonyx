@@ -122,3 +122,23 @@ body {
 		justify-content: flex-start;
 	}
 }
+
+/* Contact Form Styles */
+.form-input {
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-input:focus {
+	border-color: #0f766e;
+	box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.1);
+}
+
+.form-input.error {
+	border-color: #ef4444;
+}
+
+.error-message {
+	color: #ef4444;
+	font-size: 0.875rem;
+	margin-top: 0.25rem;
+}
