@@ -82,52 +82,6 @@
 		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 		<!-- Custom Styles -->
-		<style>
-			body {
-				font-family: "Inter", sans-serif;
-				overflow-x: hidden; /* Prevent horizontal scrolling */
-			}
-			.scroll-to-top {
-				display: none;
-				position: fixed;
-				bottom: 20px;
-				right: 20px;
-				z-index: 99;
-				cursor: pointer;
-				transition: all 0.3s ease;
-			}
-			.scroll-to-top:hover {
-				transform: translateY(-5px);
-			}
-			.team-card {
-				transition: all 0.3s ease;
-			}
-			.team-card:hover {
-				transform: translateY(-5px);
-			}
-			.team-card:hover .team-social {
-				opacity: 1;
-			}
-			.team-social {
-				opacity: 0;
-				transition: all 0.3s ease;
-			}
-			/* Fix for mobile overflow */
-			.container {
-				width: 100%;
-				max-width: 1280px;
-				margin-left: auto;
-				margin-right: auto;
-				padding-left: 1rem;
-				padding-right: 1rem;
-			}
-			@media (max-width: 640px) {
-				.container {
-					padding-left: 1rem;
-					padding-right: 1rem;
-				}
-			}
-		</style>
 	</head>
 	<body
 		class="flex flex-col min-h-screen bg-white dark:bg-gray-900 dark:text-white transition-colors duration-300 overflow-x-hidden"
@@ -227,384 +181,12 @@
 
 			<!-- Board Members -->
 			<section
-				class="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-gray-900 transition-colors duration-300"
+				class="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-gray-900 transition-colors duration-30"
 			>
 				<div class="container mx-auto">
 					<div class="grid grid-cols-1 gap-16">
-						<!-- Chairman -->
-						<div
-							class="grid md:grid-cols-2 gap-10 items-center"
-							data-aos="fade-up"
-							data-aos-duration="1000"
-						>
-							<div class="aspect-square relative overflow-hidden rounded-xl">
-								<img
-									src="https://placehold.co/600x600/f8f9fa/a3a3a3?text=Dr.+Nweke"
-									alt="Dr. Ifeanyi Gordian Nweke"
-									class="absolute inset-0 h-full w-full object-cover"
-								/>
-							</div>
-							<div class="space-y-4">
-								<div class="space-y-2">
-									<div
-										class="inline-block rounded-lg bg-primary-100 dark:bg-primary-900/30 px-3 py-1 text-sm font-medium text-primary dark:text-primary-300"
-									>
-										Chairman
-									</div>
-									<h2 class="text-3xl font-bold dark:text-white">
-										Dr. Ifeanyi Gordian Nweke
-									</h2>
-									<p class="text-xl text-gray-500 dark:text-gray-400">
-										PhD; Fss. MBA
-									</p>
-								</div>
-								<p class="text-gray-500 dark:text-gray-300">
-									Gordian is a Financial Services Consultant and Real Estate
-									Expert, having performed leading roles in several Global banks
-									in Nigeria. He is a passionate minister and witness for the
-									LORD Jesus among business Executives and Entrepreneurs.
-									Gordian is an author of several magnificent books, impacting
-									lives across the Globe. His books can be freely accessed
-									online via gordiannweke.org. Gordian lives with his wife and
-									children in Canada.
-								</p>
-								<div class="flex space-x-4 mt-4">
-									<a
-										href="#"
-										class="text-gray-500 dark:text-gray-400 hover:text-primary"
-									>
-										<i data-lucide="linkedin" class="h-5 w-5"></i>
-									</a>
-									<a
-										href="#"
-										class="text-gray-500 dark:text-gray-400 hover:text-primary"
-									>
-										<i data-lucide="mail" class="h-5 w-5"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-
-						<!-- Managing Director/CEO -->
-						<div
-							class="grid md:grid-cols-2 gap-10 items-center"
-							data-aos="fade-up"
-							data-aos-duration="1000"
-						>
-							<div
-								class="aspect-square relative overflow-hidden rounded-xl md:order-last"
-							>
-								<img
-									src="https://placehold.co/600x600/f8f9fa/a3a3a3?text=C.+Okonta"
-									alt="Chiedu Samuel Okonta"
-									class="absolute inset-0 h-full w-full object-cover"
-								/>
-							</div>
-							<div class="space-y-4">
-								<div class="space-y-2">
-									<div
-										class="inline-block rounded-lg bg-primary-100 dark:bg-primary-900/30 px-3 py-1 text-sm font-medium text-primary dark:text-primary-300"
-									>
-										Managing Director/CEO
-									</div>
-									<h2 class="text-3xl font-bold dark:text-white">
-										Chiedu Samuel Okonta
-									</h2>
-									<p class="text-xl text-gray-500 dark:text-gray-400">
-										MBA/LBS; FCA, B.SC/Upper
-									</p>
-								</div>
-								<p class="text-gray-500 dark:text-gray-300">
-									Chiedu has excellent Business and financial analytical skills,
-									a highly intuitive, strategic and result oriented leader, with
-									experience and expertise in boosting enterprise value.
-									Developing and leading teams with highest professional
-									standards to boost wealth creation, having performed several
-									leading roles in UBA Plc across Africa; Chiedu brings his
-									experience to bear in this venture. He has authored two books
-									(Keys to Sustainable SMEs and Stamp Out Fraud in Your System).
-									Chiedu is an FCA with MBA from Pan Atlantic University/Lagos
-									Business School. Lagos. He is happily married to his wife and
-									four children.
-								</p>
-								<div class="flex space-x-4 mt-4">
-									<a
-										href="#"
-										class="text-gray-500 dark:text-gray-400 hover:text-primary"
-									>
-										<i data-lucide="linkedin" class="h-5 w-5"></i>
-									</a>
-									<a
-										href="#"
-										class="text-gray-500 dark:text-gray-400 hover:text-primary"
-									>
-										<i data-lucide="mail" class="h-5 w-5"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-
-						<!-- Lead Partner -->
-						<div
-							class="grid md:grid-cols-2 gap-10 items-center"
-							data-aos="fade-up"
-							data-aos-duration="1000"
-						>
-							<div class="aspect-square relative overflow-hidden rounded-xl">
-								<img
-									src="https://placehold.co/600x600/f8f9fa/a3a3a3?text=M.+Onojake"
-									alt="Mac Onojake & Co"
-									class="absolute inset-0 h-full w-full object-cover"
-								/>
-							</div>
-							<div class="space-y-4">
-								<div class="space-y-2">
-									<div
-										class="inline-block rounded-lg bg-primary-100 dark:bg-primary-900/30 px-3 py-1 text-sm font-medium text-primary dark:text-primary-300"
-									>
-										Lead Partner
-									</div>
-									<h2 class="text-3xl font-bold dark:text-white">
-										Mac Onojake & Co
-									</h2>
-									<p class="text-xl text-gray-500 dark:text-gray-400">
-										MBA, FCA, FCTI
-									</p>
-								</div>
-								<p class="text-gray-500 dark:text-gray-300">
-									Has varied expertise in Audit, Tax and General Consulting
-									services. He has, as the leading Partner, supervised the
-									annual audits of global companies and provided tax advisory
-									services to several global institutions. His wealth of
-									experience brings great value to this Board.
-								</p>
-								<div class="flex space-x-4 mt-4">
-									<a
-										href="#"
-										class="text-gray-500 dark:text-gray-400 hover:text-primary"
-									>
-										<i data-lucide="linkedin" class="h-5 w-5"></i>
-									</a>
-									<a
-										href="#"
-										class="text-gray-500 dark:text-gray-400 hover:text-primary"
-									>
-										<i data-lucide="mail" class="h-5 w-5"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-
-						<!-- Strategy and Financial Adviser -->
-						<div
-							class="grid md:grid-cols-2 gap-10 items-center"
-							data-aos="fade-up"
-							data-aos-duration="1000"
-						>
-							<div
-								class="aspect-square relative overflow-hidden rounded-xl md:order-last"
-							>
-								<img
-									src="https://placehold.co/600x600/f8f9fa/a3a3a3?text=J.+Ike"
-									alt="Jude Ike"
-									class="absolute inset-0 h-full w-full object-cover"
-								/>
-							</div>
-							<div class="space-y-4">
-								<div class="space-y-2">
-									<div
-										class="inline-block rounded-lg bg-primary-100 dark:bg-primary-900/30 px-3 py-1 text-sm font-medium text-primary dark:text-primary-300"
-									>
-										Strategy and Financial Adviser
-									</div>
-									<h2 class="text-3xl font-bold dark:text-white">Jude Ike</h2>
-								</div>
-								<p class="text-gray-500 dark:text-gray-300">
-									Jude has led a distinguished professional career in management
-									and business advisory services. He has over 20 years of
-									professional experience straddled between local and
-									international consulting practices. He has worked in leading
-									consulting practices in Deloitte, Index Consulting and Allen
-									Professional Services. Where he served wide spectrum of
-									industries; including Corporate, Private and Government
-									entities. Jude is the founder and Lead Partner of Allen
-									Professional Services, a strategy, financial modelling, and
-									business process improvement consulting firm based in Lagos
-									Nigeria. Jude is an award-winning mathematician, a data
-									scientist, and a trained Chemical Engineer. He possesses a
-									master's degree in business administration (MBA). He is an
-									alumnus of the Pan Atlantic University (Lagos Business
-									School).
-								</p>
-								<div class="flex space-x-4 mt-4">
-									<a
-										href="#"
-										class="text-gray-500 dark:text-gray-400 hover:text-primary"
-									>
-										<i data-lucide="linkedin" class="h-5 w-5"></i>
-									</a>
-									<a
-										href="#"
-										class="text-gray-500 dark:text-gray-400 hover:text-primary"
-									>
-										<i data-lucide="mail" class="h-5 w-5"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-
-						<!-- Communication & Marketing -->
-						<div
-							class="grid md:grid-cols-2 gap-10 items-center"
-							data-aos="fade-up"
-							data-aos-duration="1000"
-						>
-							<div class="aspect-square relative overflow-hidden rounded-xl">
-								<img
-									src="https://placehold.co/600x600/f8f9fa/a3a3a3?text=E.+Favour"
-									alt="Ebubechukwu Favour"
-									class="absolute inset-0 h-full w-full object-cover"
-								/>
-							</div>
-							<div class="space-y-4">
-								<div class="space-y-2">
-									<div
-										class="inline-block rounded-lg bg-primary-100 dark:bg-primary-900/30 px-3 py-1 text-sm font-medium text-primary dark:text-primary-300"
-									>
-										Communication & Marketing
-									</div>
-									<h2 class="text-3xl font-bold dark:text-white">
-										Ebubechukwu Favour
-									</h2>
-								</div>
-								<p class="text-gray-500 dark:text-gray-300">
-									Ebube is an ORU trained Communication expert, drives strategic
-									marketing initiatives to elevate our real estate ventures. Her
-									role focuses on developing innovative campaigns, analyzing
-									marketing trends, and create compelling narratives that
-									highlight the unique value of our investment opportunities. By
-									leveraging data-driven insights and creative strategies, she
-									ensures our offerings stand out in a competitive market,
-									attracting discerning investors, and achieve optimal
-									visibility.
-								</p>
-								<div class="flex space-x-4 mt-4">
-									<a
-										href="#"
-										class="text-gray-500 dark:text-gray-400 hover:text-primary"
-									>
-										<i data-lucide="linkedin" class="h-5 w-5"></i>
-									</a>
-									<a
-										href="#"
-										class="text-gray-500 dark:text-gray-400 hover:text-primary"
-									>
-										<i data-lucide="mail" class="h-5 w-5"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-
-						<!-- Legal Adviser/Coy Sec -->
-						<div
-							class="grid md:grid-cols-2 gap-10 items-center"
-							data-aos="fade-up"
-							data-aos-duration="1000"
-						>
-							<div
-								class="aspect-square relative overflow-hidden rounded-xl md:order-last"
-							>
-								<img
-									src="https://placehold.co/600x600/f8f9fa/a3a3a3?text=O.+Oluwakayode"
-									alt="Otufale Oluwakayode A. Esq."
-									class="absolute inset-0 h-full w-full object-cover"
-								/>
-							</div>
-							<div class="space-y-4">
-								<div class="space-y-2">
-									<div
-										class="inline-block rounded-lg bg-primary-100 dark:bg-primary-900/30 px-3 py-1 text-sm font-medium text-primary dark:text-primary-300"
-									>
-										Legal Adviser/Coy Sec
-									</div>
-									<h2 class="text-3xl font-bold dark:text-white">
-										Otufale Oluwakayode A. Esq.
-									</h2>
-								</div>
-								<p class="text-gray-500 dark:text-gray-300">
-									Kayode is the Principal Associate at Kayode Otufale &
-									Associates. He was called to the Nigerian Bar as a Solicitor
-									and Advocate of the Supreme Court of Nigeria in May, 2008. He
-									practiced law with the Law firm of Messrs Dele Adesina & Co
-									from 2008 to 2015 when he commenced his private practice. He
-									is seasoned in Corporate and Commercial law and Real Estate.
-									Kayode demonstrates high level legal understanding, reasoning,
-									and analysis.
-								</p>
-								<div class="flex space-x-4 mt-4">
-									<a
-										href="#"
-										class="text-gray-500 dark:text-gray-400 hover:text-primary"
-									>
-										<i data-lucide="linkedin" class="h-5 w-5"></i>
-									</a>
-									<a
-										href="#"
-										class="text-gray-500 dark:text-gray-400 hover:text-primary"
-									>
-										<i data-lucide="mail" class="h-5 w-5"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-
-						<!-- Head-Digital Marketing -->
-						<div
-							class="grid md:grid-cols-2 gap-10 items-center"
-							data-aos="fade-up"
-							data-aos-duration="1000"
-						>
-							<div class="aspect-square relative overflow-hidden rounded-xl">
-								<img
-									src="https://placehold.co/600x600/f8f9fa/a3a3a3?text=O.+Ogunsalu"
-									alt="Oloyede Emmanuel Ogunsalu"
-									class="absolute inset-0 h-full w-full object-cover"
-								/>
-							</div>
-							<div class="space-y-4">
-								<div class="space-y-2">
-									<div
-										class="inline-block rounded-lg bg-primary-100 dark:bg-primary-900/30 px-3 py-1 text-sm font-medium text-primary dark:text-primary-300"
-									>
-										Head-Digital Marketing
-									</div>
-									<h2 class="text-3xl font-bold dark:text-white">
-										Oloyede Emmanuel Ogunsalu
-									</h2>
-								</div>
-								<p class="text-gray-500 dark:text-gray-300">
-									Oloyede is an Information Technology enthusiast with First
-									Class Degree in Business Management from Ghana Technology
-									University College, a Digital Marketing Certification from
-									Google; as well as an Oracle Certified Associate from Oracle
-									University USA.
-								</p>
-								<div class="flex space-x-4 mt-4">
-									<a
-										href="#"
-										class="text-gray-500 dark:text-gray-400 hover:text-primary"
-									>
-										<i data-lucide="linkedin" class="h-5 w-5"></i>
-									</a>
-									<a
-										href="#"
-										class="text-gray-500 dark:text-gray-400 hover:text-primary"
-									>
-										<i data-lucide="mail" class="h-5 w-5"></i>
-									</a>
-								</div>
-							</div>
-						</div>
+						<!-- Team Container -->
+						<section id="team-container" class="space-y-20"></section>
 					</div>
 				</div>
 			</section>
@@ -868,6 +450,20 @@
 					&copy; <span id="current-year"></span> RIVERGATE ONYX INVESTMENT [ROI]
 					LTD. All rights reserved.
 				</p>
+				<p
+					class="text-sm text-gray-500 dark:text-gray-400 text-center md:text-left"
+				>
+					Developed by
+					<a
+						href="https://github.com/thebasilugo"
+						class="hover:dark:text-gray-100 hover:text-gray-900 hover:underline"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<span>thebasilugo</span>
+						<i data-lucide="github" class="h-5 w-5 inline-block"></i>
+					</a>
+				</p>
 				<div class="flex gap-4">
 					<!-- Footer policy links will be populated by JavaScript -->
 				</div>
@@ -877,6 +473,7 @@
 		<!-- JavaScript -->
 		<script src="js/script.js"></script>
 		<script src="js/navbar.js"></script>
+		<script src="js/members.js" defer></script>
 
 		<script>
 			// Initialize Lucide icons
