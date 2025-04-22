@@ -49,7 +49,7 @@ const teamMembers = [
 		name: "Ebubechukwu Favour",
 		role: "Communication & Marketing",
 		degrees: "",
-		image: "https://placehold.co/160x160/f8f9fa/a3a3a3?text=Ebubechukwu+Favour",
+		image: "images/favour-ebube.jpeg",
 		description: `Ebube is an ORU trained Communication expert, drives strategic marketing initiatives to elevate our real estate ventures. Her role focuses on developing innovative campaigns, analyzing marketing trends, and create compelling narratives that highlight the unique value of our investment opportunities. By leveraging data-driven insights and creative strategies, she ensures our offerings stand out in a competitive market, attracting discerning investors, and achieve optimal visibility.`,
 		links: {
 			linkedin: "#",
