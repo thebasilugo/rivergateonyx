@@ -38,7 +38,7 @@ const teamMembers = [
 		name: "Jude Ike",
 		role: "Strategy and Financial Adviser",
 		degrees: "MBA",
-		image: "https://placehold.co/160x160/f8f9fa/a3a3a3?text=Jude+Ike",
+		image: "images/jude-ike.jpeg",
 		description: `Jude has led a distinguished professional career in management and business advisory services. He has over 20 years of professional experience straddled between local and international consulting practices. He has worked in leading consulting practices in Deloitte, Index Consulting and Allen Professional Services. Where he served wide spectrum of industries; including Corporate, Private and Government entities. Jude is the founder and Lead Partner of Allen Professional Services, a strategy, financial modelling, and business process improvement consulting firm based in Lagos Nigeria. Jude is an award-winning mathematician, a data scientist, and a trained Chemical Engineer. He possesses a master's degree in business administration (MBA). He is an alumnus of the Pan Atlantic University (Lagos Business School).`,
 		links: {
 			linkedin: "#",
