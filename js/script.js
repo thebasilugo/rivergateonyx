@@ -107,106 +107,119 @@ function initFAQ() {
   const faqContent = document.getElementById("faq-content")
   if (!faqContent) return
 
-  // FAQ Data
-  const faqData = [
-    // General category
-    {
-      category: "general",
-      title: "General Information",
-      items: [
-        {
-          question: "How long has Rivergate Onyx Investment Ltd been in operation?",
-          answer:
-            "The company was registered with Corporate Affairs Commissions on February 1st, 2007, and commenced silent operations from 2008, which became a full operation since May 2022.",
-        },
-        {
-          question: "Does Rivergate Onyx Investment Ltd have well structured Board and Management team?",
-          answer:
-            "Absolutely. The company's Board is made up of professionals with unbroken records of impeccable integrity for decades. The Board members are drawn from diverse professional backgrounds, which facilitates cross fertilisation of ideas.",
-        },
-        {
-          question: "Can I trust Rivergate Onyx Investment Ltd?",
-          answer:
-            "Very clearly, Rivergate Onyx Investment Ltd foundation is integrity, excellence, and speed. Both our services and management can be trusted <strong>100%</strong>. Because everyone is held responsible for his/her actions, while the company accepts full responsibility to ensure the right service is delivered to our customers.",
-        },
-      ],
-    },
-    // Consulting category
-    {
-      category: "consulting",
-      title: "Consulting Services",
-      items: [
-        {
-          question: "What value do we expect from Rivergate Onyx Investment Ltd consultancy services?",
-          answer:
-            "Every client seeking for our consultancy services is sure to significantly regic its business annual revenues and return on investments. While real estate sales can attract great gains in both property appreciation and increased rent.",
-        },
-        {
-          question: "Who benefits from Rivergate Onyx Investment Ltd Consulting services?",
-          answer:
-            "Many people stand to benefit from our consulting services to our clients. Including: <ul class='list-disc mt-2 space-y-1 pl-6'><li>The company, as the causes of inefficiencies are identified and corrected, thereby making the company to produce better and create more gains.</li><li>The staff, management, owners and the Govt and public.</li></ul><p class='mt-2'>All are happy. As our work brings about overall improvement that increases profitability that benefits all.</p>",
-        },
-        {
-          question: "For consulting services, what are the controls to ensure agreed expectations are achieved?",
-          answer:
-            "The major control to ensure the agreed expectations for each consulting services, is the mutual cooperation between our client and Rivergate Onyx Investment Ltd to implement every recommended improvement required.",
-        },
-      ],
-    },
-    // Real Estate category
-    {
-      category: "real-estate",
-      title: "Real Estate",
-      items: [
-        {
-          question: "How secured are the properties sold by Rivergate Onyx Investment Ltd?",
-          answer:
-            "As a company, we don't just sell any kind of property! We must know the Developer and the quality of their delivery. We also go extra mile to independently validate the property title documents as authentic, before devoting our time and the resources in its marketing.",
-        },
-        {
-          question: "How good is the structural integrity of the properties sold?",
-          answer: "We sell only properties built by tested and trusted Developers.",
-        },
-        {
-          question: "How reliable are the title documents of the properties sold by Rivergate Onyx Investment Ltd?",
-          answer:
-            "We go extra mile to conduct independent verification of the title documents before marketing the property.",
-        },
-        {
-          question: "What is the major attraction for patronising Rivergate Onyx Investment Ltd?",
-          answer:
-            "Most especially the impressive revenue and profitability achievement is the key attraction to our services.",
-        },
-        {
-          question: "For real estate sales, what are the controls to ensure seamless and secured transactions?",
-          answer:
-            "As a company rule, all sales proceeds from real estate sales are paid direct into the account of the property owner, mostly, the Developer. Our company is only entitled to the agreed sales commission which is payable to Rivergate Onyx Investment Ltd account upon successful execution of the property documentation and hand over.",
-        },
-      ],
-    },
-    // International Business category
-    {
-      category: "international",
-      title: "International Business",
-      items: [
-        {
-          question: "Does Rivergate Onyx Investment Ltd handle contracts from outside Nigeria?",
-          answer:
-            "Yes. We do. As a matter of fact, some of our Board members, staff and followers are resident outside Nigeria. We receive consultancy requests; as well as demand for Nigerian properties from abroad.",
-        },
-        {
-          question: "How does Rivergate Onyx Investment Ltd handle foreign transactions?",
-          answer:
-            "Foreign requests for our Financial and Mgt Consulting services from abroad are subjected to the same high standard of speed, excellence and integrity. In addition, the bill is usually denominated in foreign currency. While demand for Nigerian properties from abroad are subjected to the high standard of speed, excellence and integrity, but the settlement is usually denominated in Naira, since the properties are built locally.",
-        },
-        {
-          question: "Have there been failed or poorly executed contracts?",
-          answer:
-            "No! We have not had any of such. But in case it happens, which we don't expect, in line with our company's standard of integrity, the Client is fully reimbursed to its original position.",
-        },
-      ],
-    },
-  ]
+	// FAQ Data
+	const faqData = [
+		// General category
+		{
+			category: "general",
+			title: "General Information",
+			items: [
+				{
+					question:
+						"How long has Rivergate Onyx Investment Ltd been in operation?",
+					answer:
+						"The company was registered with Corporate Affairs Commissions on February 1st, 2007, and commenced silent operations from 2008, which became a full operation since May 2022.",
+				},
+				{
+					question:
+						"Does Rivergate Onyx Investment Ltd have well structured Board and Management team?",
+					answer:
+						"Absolutely. The company's Board is made up of professionals with unbroken records of impeccable integrity for decades. The Board members are drawn from diverse professional backgrounds, which facilitates cross fertilisation of ideas.",
+				},
+				{
+					question: "Can I trust Rivergate Onyx Investment Ltd?",
+					answer:
+						"Very clearly, Rivergate Onyx Investment Ltd foundation is integrity, excellence, and speed. Both our services and management can be trusted <strong>100%</strong>. Because everyone is held responsible for his/her actions, while the company accepts full responsibility to ensure the right service is delivered to our customers.",
+				},
+			],
+		},
+		// Consulting category
+		{
+			category: "consulting",
+			title: "Consulting Services",
+			items: [
+				{
+					question:
+						"What value do we expect from Rivergate Onyx Investment Ltd consultancy services?",
+					answer:
+						"Every client seeking for our consultancy services is sure to significantly regic its business annual revenues and return on investments. While real estate sales can attract great gains in both property appreciation and increased rent.",
+				},
+				{
+					question:
+						"Who benefits from Rivergate Onyx Investment Ltd Consulting services?",
+					answer:
+						"Many people stand to benefit from our consulting services to our clients. Including: <ul class='list-disc mt-2 space-y-1 pl-6'><li>The company, as the causes of inefficiencies are identified and corrected, thereby making the company to produce better and create more gains.</li><li>The staff, management, owners and the Govt and public.</li></ul><p class='mt-2'>All are happy. As our work brings about overall improvement that increases profitability that benefits all.</p>",
+				},
+				{
+					question:
+						"For consulting services, what are the controls to ensure agreed expectations are achieved?",
+					answer:
+						"The major control to ensure the agreed expectations for each consulting services, is the mutual cooperation between our client and Rivergate Onyx Investment Ltd to implement every recommended improvement required.",
+				},
+			],
+		},
+		// Real Estate category
+		{
+			category: "real-estate",
+			title: "Real Estate",
+			items: [
+				{
+					question:
+						"How secured are the properties sold by Rivergate Onyx Investment Ltd?",
+					answer:
+						"As a company, we don't just sell any kind of property! We must know the Developer and the quality of their delivery. We also go extra mile to independently validate the property title documents as authentic, before devoting our time and resources in its marketing.",
+				},
+				{
+					question:
+						"How good is the structural integrity of the properties sold?",
+					answer:
+						"We sell only properties built by tested and trusted Developers.",
+				},
+				{
+					question:
+						"How reliable are the title documents of the properties sold by Rivergate Onyx Investment Ltd?",
+					answer:
+						"We go extra mile to conduct independent verification of the title documents before marketing the property.",
+				},
+				{
+					question:
+						"What is the major attraction for patronising Rivergate Onyx Investment Ltd?",
+					answer:
+						"Most especially the impressive revenue and profitability achievement is the key attraction to our services.",
+				},
+				{
+					question:
+						"For real estate sales, what are the controls to ensure seamless and secured transactions?",
+					answer:
+						"As a company rule, all sales proceeds from real estate sales are paid direct into the account of the property owner, mostly, the Developer. Our company is only entitled to the agreed sales commission which is payable to Rivergate Onyx Investment Ltd account upon successful execution of the property documentation and hand over.",
+				},
+			],
+		},
+		// International Business category
+		{
+			category: "international",
+			title: "International Business",
+			items: [
+				{
+					question:
+						"Does Rivergate Onyx Investment Ltd handle contracts from outside Nigeria?",
+					answer:
+						"Yes. We do. As a matter of fact, some of our Board members, staff and followers are resident outside Nigeria. We receive consultancy requests; as well as demand for Nigerian properties from abroad.",
+				},
+				{
+					question:
+						"How does Rivergate Onyx Investment Ltd handle foreign transactions?",
+					answer:
+						"Foreign requests for our Financial and Mgt Consulting services from abroad are subjected to the same high standard of speed, excellence and integrity. In addition, the bill is usually denominated in foreign currency. While demand for Nigerian properties from abroad are subjected to the high standard of speed, excellence and integrity, but the settlement is usually denominated in Naira, since the properties are built locally.",
+				},
+				{
+					question: "Have there been failed or poorly executed contracts?",
+					answer:
+						"No! We have not had any of such. But in case it happens, which we don't expect, in line with our company's standard of integrity, the Client is fully reimbursed to its original position.",
+				},
+			],
+		},
+	];
 
   const categoryButtons = document.querySelectorAll(".faq-category-btn")
 
