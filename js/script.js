@@ -144,7 +144,7 @@ function initFAQ() {
         {
           question: "Who benefits from Rivergate Onyx Investment Ltd Consulting services?",
           answer:
-            "Many people stand to benefit from our consulting services to our clients. Including: <ul class='list-disc mt-2 space-y-1 pl-6'><li>The company, as the causes of inefficiencies are identified and corrected, thereby making the company to produce better and more gains.</li><li>The staff, management, owners and the Govt and public.</li></ul><p class='mt-2'>All are happy. As our work brings about overall improvement that increases profitability that benefits all.</p>",
+            "Many people stand to benefit from our consulting services to our clients. Including: <ul class='list-disc mt-2 space-y-1 pl-6'><li>The company, as the causes of inefficiencies are identified and corrected, thereby making the company to produce better and create more gains.</li><li>The staff, management, owners and the Govt and public.</li></ul><p class='mt-2'>All are happy. As our work brings about overall improvement that increases profitability that benefits all.</p>",
         },
         {
           question: "For consulting services, what are the controls to ensure agreed expectations are achieved?",
