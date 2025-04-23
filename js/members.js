@@ -78,7 +78,17 @@ const teamMembers = [
 			mail: "#",
 		},
 	},
-
+	// {
+	// 	name: "Basil Ugochukwu",
+	// 	role: "Web Developer",
+	// 	degrees: "BSc",
+	// 	image: "https://placehold.co/160x160/f8f9fa/a3a3a3?text=Basil+Ugochukwu",
+	// 	description: `Basil is a passionate Front-end Developer with a strong foundation in building responsive and performant web applications using React, Next.js, TypeScript, and TailwindCSS. With hands-on experience developing client-facing solutions for startups and organizations, he has successfully delivered production-grade projects including e-commerce platforms, streaming apps, and logistics systems. Basil is also an educator and content creator, having tutored students in web development and volunteered as a media lead in community initiatives. He holds a BSc. in Computer Science from Landmark University, where he also co-authored a cybersecurity research paper published in IEEE Xplore. Basil blends design sensitivity with technical expertise to build scalable digital experiences.`,
+	// 	links: {
+	// 		linkedin: "https://linkedin.com/in/thebasilugo",
+	// 		mail: "mailto:basilugo2@gmail.com",
+	// 	},
+	// },
 	// Add more team members here
 ];
 

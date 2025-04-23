@@ -59,11 +59,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	// Coming soon pages
 	// commenting them out to hide the pages
-	// const COMING_SOON_PAGES = [
-	// 	{ name: "Properties", url: "#" },
-	// 	{ name: "Blog", url: "#" },
-	// 	{ name: "Careers", url: "#" },
-	// ];
+	const COMING_SOON_PAGES = [
+		// { name: "Properties", url: "#" },
+		// { name: "Blog", url: "#" },
+		// { name: "Careers", url: "#" },
+		{ name: "", url: "#" },
+	];
 
 	// Footer links that are coming soon
 	const FOOTER_COMING_SOON = [
@@ -108,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	 */
 	function createComingSoonModal() {
 		const modalHTML = `
-        <div id="coming-soon-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black bg-opacity-50">
+        <div id="coming-soon-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black bg-opacity-50 cursor-none">
             <div class="bg-white dark:bg-gray-800 rounded-lg p-8 max-w-md w-full mx-4 shadow-xl transform transition-all">
                 <div class="flex justify-between items-center mb-4">
                     <h3 class="text-xl font-bold dark:text-white">Coming Soon</h3>
@@ -245,7 +246,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		populateFooterPages();
 
 		// Update footer links for services section
-		populateFooterServices();
+		// populateFooterServices();
 
 		// Update footer copyright section
 		populateFooterCopyright();
@@ -527,9 +528,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		if (isActive) {
 			link.className =
-				"block py-2 text-base font-medium text-gray-900 dark:text-white";
+				"block py-2 text-base font-medium text-gray-900 dark:text-white hover:text-primary dark:hover:text-primary";
 		} else {
-			link.className = "block py-2 text-base text-gray-500 dark:text-gray-300";
+			link.className =
+				"block py-2 text-base text-gray-500 dark:text-gray-300 hover:text-primary dark:hover:text-primary";
 		}
 
 		link.textContent = page.name;
@@ -543,7 +545,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		const link = document.createElement("a");
 		link.href = "#";
 		link.className =
-			"coming-soon-link block py-2 text-base text-gray-500 dark:text-gray-300";
+			"coming-soon-link block py-2 text-base text-gray-500 dark:text-gray-300 cursor-not-allowed pointer-events-none";
 		link.textContent = page.name;
 		return link;
 	}
