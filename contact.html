@@ -301,6 +301,50 @@
 				</div>
 			</section>
 
+			<!-- company location images -->
+			<section
+				class="w-full py-6 md:py-24 lg:py-32 bg-gray-50 dark:bg-gray-800 transition-colors duration-300"
+			>
+				<div class="container mx-auto flex gap-8">
+					<div
+						class="relative h-[400px] w-full overflow-hidden rounded-xl"
+						data-aos="fade-up"
+						data-aos-duration="1000"
+						data-aos-delay="200"
+					>
+						<img
+							src="https://placehold.co/600x400/f8f9fa/a3a3a3?text=Company+Outside"
+							alt="Company Outside"
+							class="absolute inset-0 h-full w-full object-cover"
+						/>
+					</div>
+					<div
+						class="relative h-[400px] w-full overflow-hidden rounded-xl"
+						data-aos="fade-up"
+						data-aos-duration="1000"
+						data-aos-delay="200"
+					>
+						<img
+							src="https://placehold.co/600x400/f8f9fa/a3a3a3?text=Company+Inside+1"
+							alt="Company Inside 1"
+							class="absolute inset-0 h-full w-full object-cover"
+						/>
+					</div>
+					<div
+						class="relative h-[400px] w-full overflow-hidden rounded-xl"
+						data-aos="fade-up"
+						data-aos-duration="1000"
+						data-aos-delay="200"
+					>
+						<img
+							src="https://placehold.co/600x400/f8f9fa/a3a3a3?text=Company+Inside+2"
+							alt="Company Inside 2"
+							class="absolute inset-0 h-full w-full object-cover"
+						/>
+					</div>
+				</div>
+			</section>
+
 			<!-- Contact Form -->
 			<!-- <section
 				class="w-full py-12 md:py-24 lg:py-32 bg-gray-50 dark:bg-gray-800 transition-colors duration-300"
@@ -512,7 +556,7 @@
 			<div
 				class="container mx-auto flex flex-col md:flex-row justify-between gap-8"
 			>
-				<div class="flex flex-col gap-4 md:w-4/5">
+				<div class="flex flex-col gap-4 lg:w-4/5">
 					<div class="flex items-center gap-2">
 						<i data-lucide="building" class="h-6 w-6 text-primary"></i>
 						<span class="font-bold dark:text-white"
@@ -561,20 +605,21 @@
 							+234 813 999 3322
 						</a>
 					</div>
-					<div class="flex space-x-4 mt-2">
+					<div class="flex space-x-4 mt-0">
+						<!-- was mt-2 before -->
 						<!-- <a
 							href="#"
 							class="text-gray-500 dark:text-gray-400 hover:text-primary"
 						>
 							<i data-lucide="facebook" class="h-5 w-5"></i>
-						</a> -->
-						<!-- <a
+						</a> 
+						<a
 							href="#"
 							class="text-gray-500 dark:text-gray-400 hover:text-primary"
 						>
 							<i data-lucide="twitter" class="h-5 w-5"></i>
-						</a> -->
-						<!-- <a
+						</a>
+						<a
 							href="#"
 							class="text-gray-500 dark:text-gray-400 hover:text-primary"
 						>
@@ -582,10 +627,10 @@
 						</a> -->
 						<a
 							href="https://www.instagram.com/rivergate_onyx_invstmt"
-							class="text-gray-500 dark:text-gray-400 hover:text-primary"
+							class="text-gray-500 dark:text-gray-400 hover:text-primary flex items-center"
 						>
-							<i data-lucide="instagram" class="h-5 w-5 inline-block"></i>
-							&ThinSpace;Instagram
+							<i data-lucide="instagram" class="h-4 w-4 inline-block"></i>
+							<span class="px-2">Instagram</span>
 						</a>
 					</div>
 				</div>
