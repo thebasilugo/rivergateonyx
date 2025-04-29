@@ -56,17 +56,17 @@ const teamMembers = [
 			mail: "#",
 		},
 	},
-	// {
-	// 	name: "Otufale Oluwakayode A. Esq.",
-	// 	role: "Legal Adviser/Coy Sec",
-	// 	degrees: "",
-	// 	image: "https://placehold.co/160x160/f8f9fa/a3a3a3?text=Otufale+Kayode",
-	// 	description: `Kayode is the Principal Associate at Kayode Otufale & Associates. He was called to the Nigerian Bar as a Solicitor and Advocate of the Supreme Court of Nigeria in May, 2008. He practiced law with the Law firm of Messrs Dele Adesina & Co from 2008 to 2015 when he commenced his private practice. He is seasoned in Corporate and Commercial law and Real Estate. Kayode demonstrates high level legal understanding, reasoning, and analysis.`,
-	// 	links: {
-	// 		linkedin: "#",
-	// 		mail: "#",
-	// 	},
-	// },
+	{
+		name: "Chuks Ugwunwa Esq.",
+		role: "Legal Adviser/Coy Sec",
+		degrees: "",
+		image: "images/chuks-ugwunwa.jpeg",
+		description: `Legal practitioner with sound academic foundation in law, holding both a Bachelor of Laws (LL.B) degree and a Barrister at Law (B.L) . Under Ekwuogo & Co Legal Practitioners , with speciality in civil, corporate, and real estate law. We offer clients excellent professional legal services based on our deep understanding of the legal and regulatory frameworks that govern these sectors. Holding a high standard of legal and regulatory compliance without compromising clients' interest in all cases`,
+		links: {
+			linkedin: "#",
+			mail: "#",
+		},
+	},
 	{
 		name: "Oloyede Emmanuel Ogunsalu",
 		role: "Head - Digital Marketing",
