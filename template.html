@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>RIVERGATE ONYX INVESTMENT [ROI] LTD</title>
+		<meta
+			name="description"
+			content="We enhance clients' operational efficiency, thereby leading to enhanced productivity, liquidity and profitability through our professional services."
+		/>
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" href="assets/images/favicon.png" />
+		<!-- Tailwind CSS -->
+		<script src="https://cdn.tailwindcss.com"></script>
+		<!-- Custom Tailwind Config -->
+		<script>
+			tailwind.config = {
+				darkMode: "class",
+				theme: {
+					extend: {
+						colors: {
+							primary: {
+								DEFAULT: "#0f766e",
+								50: "#f0fdfa",
+								100: "#ccfbf1",
+								200: "#99f6e4",
+								300: "#5eead4",
+								400: "#2dd4bf",
+								500: "#14b8a6",
+								600: "#0d9488",
+								700: "#0f766e",
+								800: "#115e59",
+								900: "#134e4a",
+								950: "#042f2e",
+							},
+							secondary: {
+								DEFAULT: "#475569",
+								50: "#f8fafc",
+								100: "#f1f5f9",
+								200: "#e2e8f0",
+								300: "#cbd5e1",
+								400: "#94a3b8",
+								500: "#64748b",
+								600: "#475569",
+								700: "#334155",
+								800: "#1e293b",
+								900: "#0f172a",
+								950: "#020617",
+							},
+						},
+						fontFamily: {
+							sans: ["Inter", "sans-serif"],
+						},
+						animation: {
+							"fade-in": "fadeIn 0.5s ease-in-out",
+							"slide-up": "slideUp 0.5s ease-in-out",
+						},
+						keyframes: {
+							fadeIn: {
+								"0%": { opacity: "0" },
+								"100%": { opacity: "1" },
+							},
+							slideUp: {
+								"0%": { transform: "translateY(20px)", opacity: "0" },
+								"100%": { transform: "translateY(0)", opacity: "1" },
+							},
+						},
+					},
+				},
+			};
+		</script>
+		<!-- Inter Font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Lucide Icons -->
+		<script src="https://unpkg.com/lucide@latest"></script>
+		<!-- AOS Animation Library -->
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body
+		class="flex flex-col min-h-screen bg-white dark:bg-gray-900 dark:text-white transition-colors duration-300 overflow-x-hidden"
+	>
+		<!-- Preloader -->
+		<div
+			id="preloader"
+			class="fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-gray-900"
+		>
+			<div
+				class="animate-spin rounded-full h-16 w-16 border-t-4 border-primary border-solid"
+			></div>
+		</div>
+
+		<!-- Scroll to Top Button -->
+		<button
+			id="scrollToTop"
+			class="scroll-to-top bg-primary hover:bg-primary-600 text-white p-3 rounded-full shadow-lg"
+		>
+			<i data-lucide="chevron-up" class="h-6 w-6"></i>
+		</button>
+
+		<!-- Header -->
+		<header
+			class="sticky top-0 z-40 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:bg-gray-900/95 dark:border-gray-800 transition-colors duration-300"
+		>
+			<div class="container mx-auto flex h-16 items-center justify-between">
+				<div class="flex items-center gap-2">
+					<a href="index.html" class="flex items-center space-x-2">
+						<i data-lucide="building" class="h-6 w-6 text-primary"></i>
+						<span class="hidden font-bold sm:inline-block"
+							>RIVERGATE ONYX INVESTMENT [ROI] LTD</span
+						>
+					</a>
+				</div>
+				<nav class="hidden md:flex items-center gap-6 text-sm">
+					<!-- Navigation items will be populated by JavaScript -->
+				</nav>
+				<div class="flex items-center gap-2">
+					<button
+						id="darkModeToggle"
+						class="p-2 rounded-full text-gray-500 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+					>
+						<i data-lucide="sun" class="h-5 w-5 dark:hidden"></i>
+						<i data-lucide="moon" class="h-5 w-5 hidden dark:block"></i>
+					</button>
+					<a
+						href="contact.html"
+						class="hidden md:inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-primary-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary"
+					>
+						Get Started
+					</a>
+					<button
+						id="mobile-menu-button"
+						class="inline-flex items-center justify-center rounded-md border border-gray-200 dark:border-gray-700 p-2 text-gray-500 dark:text-gray-300 md:hidden"
+					>
+						<i data-lucide="menu" class="h-5 w-5"></i>
+						<span class="sr-only">Toggle Menu</span>
+					</button>
+				</div>
+			</div>
+			<!-- Mobile Menu -->
+			<div id="mobile-menu" class="hidden md:hidden">
+				<div class="space-y-1 px-4 py-3 border-t dark:border-gray-800">
+					<!-- Mobile navigation items will be populated by JavaScript -->
+				</div>
+			</div>
+		</header>
+
+		<main class="flex-1">
+			<!-- Page content goes here -->
+		</main>
+
+		<!-- Footer -->
+		<footer
+			class="w-full border-t bg-white dark:bg-gray-900 dark:border-gray-800 py-8 md:py-12 transition-colors duration-300"
+		>
+			<div
+				class="container mx-auto flex flex-col md:flex-row justify-between gap-8"
+			>
+				<div class="flex flex-col gap-4 md:w-4/5">
+					<div class="flex items-center gap-2">
+						<i data-lucide="building" class="h-6 w-6 text-primary"></i>
+						<span class="font-bold dark:text-white"
+							>RIVERGATE ONYX INVESTMENT [ROI] LTD</span
+						>
+					</div>
+					<p class="text-sm text-gray-500 dark:text-gray-400">
+						Building and sustaining operational efficiency, leading to enhanced
+						productivity, liquidity, and profitability.
+					</p>
+					<div
+						class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400"
+					>
+						<i data-lucide="map-pin" class="h-4 w-4"></i>
+						<span>
+							No 23B. Ondo Close, Crystal Estate, Behind Durba hotel, Amuwo LGA,
+							Lagos, Nigeria
+						</span>
+					</div>
+					<div
+						class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400"
+					>
+						<i data-lucide="mail" class="h-4 w-4"></i>
+						<a
+							href="mailto:rivergateonyxltd@gmail.com"
+							class="hover:underline hover:text-primary"
+						>
+							rivergateonyxltd@gmail.com
+						</a>
+					</div>
+					<div
+						class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400"
+					>
+						<i data-lucide="phone" class="h-4 w-4"></i>
+						<a
+							href="tel:+2349079103248"
+							class="hover:underline hover:text-primary"
+						>
+							+234 907 910 3248
+						</a>
+						<span>/</span>
+						<a
+							href="tel:+2348139993322"
+							class="hover:underline hover:text-primary"
+						>
+							+234 813 999 3322
+						</a>
+					</div>
+					<div class="flex space-x-4 mt-2">
+						<a
+							href="#"
+							class="text-gray-500 dark:text-gray-400 hover:text-primary"
+						>
+							<i data-lucide="facebook" class="h-5 w-5"></i>
+						</a>
+						<a
+							href="#"
+							class="text-gray-500 dark:text-gray-400 hover:text-primary"
+						>
+							<i data-lucide="twitter" class="h-5 w-5"></i>
+						</a>
+						<a
+							href="#"
+							class="text-gray-500 dark:text-gray-400 hover:text-primary"
+						>
+							<i data-lucide="linkedin" class="h-5 w-5"></i>
+						</a>
+						<a
+							href="#"
+							class="text-gray-500 dark:text-gray-400 hover:text-primary"
+						>
+							<i data-lucide="instagram" class="h-5 w-5"></i>
+						</a>
+					</div>
+				</div>
+				<div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+					<div class="flex flex-col gap-2">
+						<h3 class="font-semibold text-sm dark:text-white">Pages</h3>
+						<a
+							href="index.html"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
+							Home
+						</a>
+						<a
+							href="about.html"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
+							About
+						</a>
+						<a
+							href="services.html"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
+							Services
+						</a>
+						<!-- <a
+                  href="properties.html"
+                  class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+              >
+                  Properties
+              </a> -->
+						<a
+							href="team.html"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
+							Team
+						</a>
+						<!-- <a
+                  href="blog.html"
+                  class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+              >
+                  Blog
+              </a> -->
+						<a
+							href="faq.html"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
+							FAQ
+						</a>
+						<a
+							href="contact.html"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
+							Contact
+						</a>
+					</div>
+					<div class="flex flex-col gap-2">
+						<h3 class="font-semibold text-sm dark:text-white">Services</h3>
+						<a
+							href="consulting-services.html"
+							class="coming-soon-link text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
+							Consulting Services
+						</a>
+						<a
+							href="real-estate-marketing.html"
+							class="coming-soon-link text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
+							Real Estate Marketing
+						</a>
+						<a
+							href="real-estate-management.html"
+							class="coming-soon-link text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
+							Real Estate Management
+						</a>
+						<a
+							href="services.html"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
+							All Services
+						</a>
+					</div>
+					<div class="flex flex-col gap-2 col-span-2 md:col-span-1">
+						<h3 class="font-semibold text-sm dark:text-white">Connect</h3>
+						<a
+							href="https://www.chiedurivergate.com"
+							target="_blank"
+							class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary hover:underline"
+						>
+							www.chiedurivergate.com
+						</a>
+					</div>
+				</div>
+			</div>
+			<div
+				class="container mx-auto mt-8 flex flex-col md:flex-row justify-between items-center gap-4 border-t border-gray-200 dark:border-gray-800 pt-8"
+			>
+				<p
+					class="text-xs text-gray-500 dark:text-gray-400 text-center md:text-left"
+				>
+					&copy; <span id="current-year"></span> RIVERGATE ONYX INVESTMENT [ROI]
+					LTD. All rights reserved.
+				</p>
+				<div class="flex gap-4">
+					<!-- Footer policy links will be populated by JavaScript -->
+				</div>
+			</div>
+		</footer>
+
+		<!-- JavaScript -->
+		<script src="js/script.js"></script>
+		<script src="js/navbar.js"></script>
+	</body>
+</html>
