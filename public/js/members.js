@@ -2,11 +2,15 @@
 
 const teamMembers = [
 	{
-		name: "Dr. Ifeanyi Gordian Nweke",
+		name: "Prof. John Osarenren",
 		role: "Chairman",
 		degrees: "PhD; Fss. MBA",
-		image: "https://placehold.co/160x160/f8f9fa/a3a3a3?text=Ifeanyi+Nweke",
-		description: `Gordian is a Financial Services Consultant and Real Estate Expert, having performed leading roles in several Global banks in Nigeria. He is a passionate minister and witness for the LORD Jesus among business Executives and Entrepreneurs. Gordian is an author of several magnificent books, impacting lives across the Globe. His books can be freely accessed online via gordiannweke.org. Gordian lives with his wife and children in Canada.`,
+		image: "images/john-osarenren",
+		description: `Dr. John Osarenren. SNR VC GODSU Online University; is the CEO of Integrated Revenue and Retention Business, and Integrated Agriculture and Industrial Consultancy, Bronx, New York.
+		He has many years of experience as a Engineering Consultant, technology, and business advisor.
+		He works as an Agricultural Engineering Consultant at Integrated Agriculture and Industrial Consulting Company, in New York. He is a member of the American Society of Agricultural and Biological Engineers.
+		He carries out Technology and Business ADVISORY SERVICES for many iconic companies internationally.
+		an author of 4 books and  happily married with 3 children.`,
 		links: {
 			linkedin: "#",
 			mail: "#",
